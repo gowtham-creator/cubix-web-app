@@ -32,10 +32,16 @@ export const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="p-4 flex flex-row justify-between">
+    <header className="p-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center">
       <div className="logo-section ">
-        <div className="logo h-5 w-auto ">
-          <Image src={"/logo.svg"} alt="12" width={114} height={32} />
+        <div className="logo  ">
+          <Image
+            src={"/logo.svg"}
+            alt="Cubixso"
+            width={114}
+            height={32}
+            className="h-10 w-auto"
+          />
         </div>
       </div>
       <nav className="flex flex-row gap-5">
