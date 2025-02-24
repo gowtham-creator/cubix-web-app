@@ -4,8 +4,13 @@ import { cn } from "lib/utils";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { FC } from "react";
 
-export const Header = () => {
+interface Props {
+  className?: string;
+  theme?: "black" | "white";
+}
+export const Header: FC<Props> = ({ className, theme = "white" }) => {
   const links = [
     {
       name: "Home",
@@ -32,11 +37,16 @@ export const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="p-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center">
+    <header
+      className={cn(
+        "px-10 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
+        className,
+      )}
+    >
       <div className="logo-section ">
         <div className="logo  ">
           <Image
-            src={"/logo.svg"}
+            src={theme === "white" ? "/logo-black.svg" : "/logo-white.svg"}
             alt="Cubixso"
             width={114}
             height={32}
@@ -52,6 +62,7 @@ export const Header = () => {
             className={cn(
               "hover:font-bold",
               pathname === link.href && "font-bold",
+              theme === "black" ? "text-white" : "text-black",
             )}
           >
             {link.name}
