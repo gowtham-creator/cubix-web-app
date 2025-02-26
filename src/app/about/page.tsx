@@ -1,5 +1,6 @@
+import { InfiniteMovingCards } from "@accernity/infinite-moving-cards";
 import { Header } from "@components/Header";
-import { InfiniteCarousel } from "@components/InfiniteCarousel";
+
 import {
   LightbulbIcon,
   BarChart3Icon,
@@ -185,15 +186,55 @@ const CoreValueSection = () => {
 };
 
 const TeamSection = () => {
+  const testimonials = [
+    {
+      quote:
+        "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+      name: "Charles Dickens",
+      title: "A Tale of Two Cities",
+    },
+    {
+      quote:
+        "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+      name: "William Shakespeare",
+      title: "Hamlet",
+    },
+    {
+      quote: "All that we see or seem is but a dream within a dream.",
+      name: "Edgar Allan Poe",
+      title: "A Dream Within a Dream",
+    },
+    {
+      quote:
+        "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+      name: "Jane Austen",
+      title: "Pride and Prejudice",
+    },
+    {
+      quote:
+        "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+      name: "Herman Melville",
+      title: "Moby-Dick",
+    },
+  ];
+
+  const supporters = [
+    "/atlassian.png",
+    "/digital-ocean.png",
+    "/google-devs.png",
+    "/google-devs.png",
+    "/google-devs.png",
+  ];
+
   return (
     <section className="team-section bg-[url('/vision-mission-bg.png')] 2xl:px-32 xl:px-16 px-10  bg-contain bg-no-repeat bg-top min-h-screen">
       <div className="team-section-content flex flex-col gap-12">
         <VisionMissionCards />
         <div className="team-members flex flex-col items-center gap-12">
-          <h1 className="text-5xl font-medium  text-center">
+          <h1 className="text-3xl md:text-5xl font-medium  text-center">
             Meet the Team: <br /> The Minds Behind the Initiative
           </h1>
-          <ul className="team-members-list flex flex-row gap-6 text-center">
+          <ul className="team-members-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             <li className="flex flex-col gap-1">
               <Image
                 src={"/gowtham.png"}
@@ -228,7 +269,15 @@ const TeamSection = () => {
         </div>
         <section className="our-supporters flex flex-col justify-center items-center ">
           <h1 className="text-5xl font-medium">Our Supporters</h1>
-          <InfiniteCarousel />
+          {/* <InfiniteCarousel /> */}
+          <div className="h-[10rem] 2xl:px-32 xl:px-16 px-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+            <InfiniteMovingCards
+              logos={supporters}
+              items={testimonials}
+              direction="right"
+              speed="fast"
+            />
+          </div>
         </section>
       </div>
     </section>

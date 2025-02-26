@@ -24,6 +24,7 @@
       // "@models/*": ["db/models/*"],
       // "@controllers/*": ["db/controllers/*"],
       "@shadcn/*": ["components/ui/*"],
+      "@accernity/*": ["components/accernity/*"],
       "@components/*": ["components/*", "!components/ui/*"]
     }
   },
