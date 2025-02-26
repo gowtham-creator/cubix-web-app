@@ -1,9 +1,24 @@
+"use client";
+import { FeaturedProductsSection } from "@components/FeaturedProducts";
 import { Header } from "@components/Header";
 import { Button } from "@shadcn/button";
+import { Input } from "@shadcn/input";
 import Image from "next/image";
+import Link from "next/link";
 import { FaCalendar } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import { MdMail } from "react-icons/md";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@shadcn/select";
+import { Textarea } from "@shadcn/textarea";
+import { Label } from "@shadcn/label";
 
 export default function Home() {
   return (
@@ -27,6 +42,10 @@ export default function Home() {
       </section>
       <PartnerSection />
       <ScheduleSection />
+      <BeyondFameSection />
+      <FeaturedProductsSection />
+      <StayAheadSection />
+      <SendMessageForm />
     </div>
   );
 }
@@ -168,6 +187,189 @@ const ScheduleSection = () => {
             ))}
           </div>
         </div>
+      </div>
+    </section>
+  );
+};
+
+const BeyondFameSection = () => {
+  return (
+    <section className="bg-[url('/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
+      <div className="beyond-fame-content 2xl:px-32 xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
+        <h1 className="font-semibold text-white text-6xl">
+          Beyond the Hype: <br /> Smart, Cost-Effective GenAI
+        </h1>
+        <p className="max-w-2xl text-white text-lg">
+          In the rush to adopt GenAI, businesses often force-fit AI solutions,
+          leading to high costs, inefficiencies, and unreliable automation. We
+          take a different path—reverse-engineering business needs first,
+          ensuring AI works for you, not against you.
+        </p>
+        <Button className="rounded-none bg-white w-fit text-black hover:bg-white/80">
+          Learn More
+          <GoArrowRight />{" "}
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+const StayAheadSection = () => {
+  return (
+    <section className="bg-[url('/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
+      <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
+        <div className="flex flex-col gap-4 max-w-4xl">
+          <h1 className="font-semibold text-white text-6xl">
+            Stay Ahead with Real-World <br />
+            Insights
+          </h1>
+          <p className="max-w-2xl text-white text-lg">
+            We share real stories of digital transformation, breaking down how
+            businesses are adapting to AI, modernization, and shifting industry
+            trends. No fluff—just practical insights to help you make informed
+            decisions and stay ahead.{" "}
+          </p>
+          <form className="flex flex-row gap-4">
+            <Input
+              type="text"
+              placeholder="Email ID"
+              className="rounded-none w-96 placeholder:italic h-10 bg-white"
+            />
+            <Button className="rounded-none h-10 w-52 bg-white text-black">
+              Join our newsletter <GoArrowRight />
+            </Button>
+          </form>
+        </div>
+        <div className="text-xl text-white md:mt-20 mt-2 max-w-4xl">
+          Got a Story to Share? – Tell us how your business is evolving with
+          technology.{" "}
+          <Link href={"/"} className="text-blue-300 font-semibold">
+            Submit Your Story{" "}
+          </Link>
+          and we’ll help share your journey with the world.
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const SendMessageForm = () => {
+  const { register, handleSubmit, setValue, watch } = useForm({
+    defaultValues: {
+      helpType: "",
+      companyName: "",
+      email: "",
+      phoneNumber: "",
+      name: "",
+      designation: "",
+      message: "",
+    },
+  });
+
+  const helpType = watch("helpType");
+  const [data, setData] = useState("");
+
+  return (
+    <section className="bg-[url('/form-bg.png')] bg-cover bg-bottom min-h-[80vh]">
+      <div className="form-content  2xl:px-32  xl:px-16 px-10 pt-8 flex flex-col items-center gap-5  ">
+        <h1 className="text-5xl text-center">Send a Message</h1>
+        <form
+          onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
+          className="w-5/6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* How can we help you dropdown */}
+            <div className="space-y-2">
+              <Label>How can we help you?</Label>
+              <Select
+                onValueChange={(value) => setValue("helpType", value)}
+                value={helpType}
+              >
+                <SelectTrigger>
+                  <SelectValue placeholder="Select an option" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="general">General Inquiry</SelectItem>
+                  <SelectItem value="support">Technical Support</SelectItem>
+                  <SelectItem value="sales">Sales</SelectItem>
+                  <SelectItem value="partnership">Partnership</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Company Name */}
+            <div className="space-y-2">
+              <Label>Company Name</Label>
+              <Input
+                id="companyName"
+                placeholder="Your company name"
+                className="bg-white"
+                {...register("companyName")}
+              />
+            </div>
+
+            {/* Email */}
+            <div className="space-y-2">
+              <Label>Email</Label>
+              <Input
+                id="email"
+                type="email"
+                className="bg-white"
+                placeholder="your.email@example.com"
+                {...register("email")}
+              />
+            </div>
+
+            {/* Phone Number */}
+            <div className="space-y-2">
+              <Label>Phone Number</Label>
+              <Input
+                id="phoneNumber"
+                className="bg-white"
+                placeholder="Your phone number"
+                {...register("phoneNumber")}
+              />
+            </div>
+
+            {/* Name */}
+            <div className="space-y-2">
+              <Label>Name</Label>
+              <Input
+                id="name"
+                placeholder="Your full name"
+                className="bg-white"
+                {...register("name")}
+              />
+            </div>
+
+            {/* Designation */}
+            <div className="space-y-2">
+              <Label>Designation</Label>
+              <Input
+                id="designation"
+                placeholder="Your job title"
+                className="bg-white"
+                {...register("designation")}
+              />
+            </div>
+          </div>
+
+          {/* Message - Spans two columns */}
+          <div className="col-span-2 mt-6">
+            <Label>Brief Your Message</Label>
+            <Textarea
+              id="message"
+              placeholder="Type your message here"
+              className="min-h-32 mt-2 bg-white"
+              {...register("message")}
+            />
+          </div>
+
+          <Button type="submit" className="w-full md:w-auto mt-4">
+            Submit
+          </Button>
+        </form>
       </div>
     </section>
   );
