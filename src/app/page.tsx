@@ -19,6 +19,7 @@ import {
 } from "@shadcn/select";
 import { Textarea } from "@shadcn/textarea";
 import { Label } from "@shadcn/label";
+import { H1 } from "@components/Heading";
 
 export default function Home() {
   return (
@@ -86,7 +87,7 @@ const PartnerSection = () => {
   return (
     <section className=" bg-[url('/partner-us-bg.png')] min-h-[80vh] bg-contain bg-no-repeat bg-right-top ">
       <div className="2xl:px-32 xl:px-16 px-10 py-10 flex flex-col gap-10 md:gap-20">
-        <h1 className="text-5xl text-center">Why partner with us</h1>
+        <H1 className=" text-center">Why partner with us</H1>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
           {listItems.map((item) => (
             <li key={item.title} className="flex flex-col gap-4">
@@ -132,21 +133,19 @@ const ScheduleSection = () => {
   return (
     <section className="bg-[url('/digital-transformation-bg.png')]  min-h-screen bg-cover bg-bottom">
       <div className="scedule-content 2xl:px-32 xl:px-16 px-10 py-20  flex flex-col gap-16">
-        <h1 className="text-5xl font-semibold text-center">
-          Your Doorway to Digital Transformation
-        </h1>
-        <div className="stratergic-section flex items-center justify-center gap-4 md:flex-row flex-col md:justify-around">
+        <H1 className="">Your Doorway to Digital Transformation</H1>
+        <div className="stratergic-section flex items-center justify-center gap-4 lg:gap-10 lg:flex-row flex-col md:justify-around">
           <Image
             src={"/doorway.png"}
             alt="doorway-image"
             width={500}
             height={400}
-            className="rounded-sm"
+            className="rounded-sm w-full h-auto lg:w-1/2"
           />
-          <div className="text-section flex flex-col gap-4  max-w-xl">
-            <h1 className="text-2xl font-semibold">
+          <div className="text-section flex flex-col gap-4 w-full lg:w-1/2  ">
+            <H1 className="text-left">
               Stratergic modernization for measurable impact
-            </h1>
+            </H1>
             <p>
               Digital transformation is not a one-size-fits-all journey. We
               provide bespoke consulting services, leveraging deep industry
@@ -175,11 +174,11 @@ const ScheduleSection = () => {
           <h1 className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg ">
             Our Approach
           </h1>
-          <div className="grid grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             {approaches.map((approach) => (
               <div
                 key={approach.title}
-                className=" shadow-lg rounded-lg w-72 p-8 flex flex-col bg-white gap-2"
+                className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2"
               >
                 <h1 className="font-semibold text-xl">{approach.title}</h1>
                 <p>{approach.description}</p>
@@ -196,9 +195,9 @@ const BeyondFameSection = () => {
   return (
     <section className="bg-[url('/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="beyond-fame-content 2xl:px-32 xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
-        <h1 className="font-semibold text-white text-6xl">
+        <H1 className="text-white text-left text-4xl">
           Beyond the Hype: <br /> Smart, Cost-Effective GenAI
-        </h1>
+        </H1>
         <p className="max-w-2xl text-white text-lg">
           In the rush to adopt GenAI, businesses often force-fit AI solutions,
           leading to high costs, inefficiencies, and unreliable automation. We
@@ -217,30 +216,30 @@ const BeyondFameSection = () => {
 const StayAheadSection = () => {
   return (
     <section className="bg-[url('/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
-      <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
+      <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 md:py-28 sm:py-16 py-10 flex flex-col gap-5 ">
         <div className="flex flex-col gap-4 max-w-4xl">
-          <h1 className="font-semibold text-white text-6xl">
+          <H1 className="text-4xl md:text-6xl text-white text-left">
             Stay Ahead with Real-World <br />
             Insights
-          </h1>
+          </H1>
           <p className="max-w-2xl text-white text-lg">
             We share real stories of digital transformation, breaking down how
             businesses are adapting to AI, modernization, and shifting industry
             trends. No fluff—just practical insights to help you make informed
             decisions and stay ahead.{" "}
           </p>
-          <form className="flex flex-row gap-4">
+          <form className="flex flex-col sm:flex-row gap-4">
             <Input
               type="text"
               placeholder="Email ID"
-              className="rounded-none w-96 placeholder:italic h-10 bg-white"
+              className="rounded-none w-full sm:w-96 placeholder:italic h-10 bg-white"
             />
-            <Button className="rounded-none h-10 w-52 bg-white text-black">
+            <Button className="rounded-none h-10 w-full sm:w-52 bg-white text-black hover:text-white">
               Join our newsletter <GoArrowRight />
             </Button>
           </form>
         </div>
-        <div className="text-xl text-white md:mt-20 mt-2 max-w-4xl">
+        <div className="text-lg md:text-xl text-white md:mt-20 mt-5 sm:mt-6 max-w-4xl">
           Got a Story to Share? – Tell us how your business is evolving with
           technology.{" "}
           <Link href={"/"} className="text-blue-300 font-semibold">
@@ -272,10 +271,10 @@ const SendMessageForm = () => {
   return (
     <section className="bg-[url('/form-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="form-content  2xl:px-32  xl:px-16 px-10 pt-8 flex flex-col items-center gap-5  ">
-        <h1 className="text-5xl text-center">Send a Message</h1>
+        <H1 className="">Send a Message</H1>
         <form
           onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
-          className="w-5/6"
+          className="md:w-5/6 w-full"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* How can we help you dropdown */}

@@ -2,6 +2,7 @@ import { Button } from "@shadcn/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@shadcn/tabs";
 import Image from "next/image";
 import { GoArrowRight } from "react-icons/go";
+import { H1 } from "./Heading";
 
 export const FeaturedProductsSection = () => {
   return (
@@ -57,9 +58,9 @@ export const FeaturedProductsSection = () => {
           <TabsContent value="Ava">
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-9">
               <div className="w-full lg:w-1/2 flex flex-col justify-between items-start gap-4">
-                <h1 className="text-5xl font-semibold leading-[1em]">
+                <H1 className="text-left leading-[1em]">
                   Logicgen: genai-Powered DMN modeler
-                </h1>
+                </H1>
                 <p className="text-lg">
                   Designed for engineering-first teams, LogicGen automates DMN
                   table, diagram, and executable generation, enabling seamless
