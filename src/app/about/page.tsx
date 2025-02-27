@@ -1,5 +1,6 @@
 import { InfiniteMovingCards } from "@accernity/infinite-moving-cards";
 import { Header } from "@components/Header";
+import { H1 } from "@components/Heading";
 
 import {
   LightbulbIcon,
@@ -24,7 +25,7 @@ const AboutPage = () => {
 const AboutMainSection = () => {
   return (
     <>
-      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16  px-4 object-contain bg-[url('/about-main-bg.png')] bg-no-repeat">
+      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 px-10 object-contain bg-[url('/about-main-bg.png')] bg-no-repeat">
         <div className="about-us-cards flex flex-col flex-wrap py-16 gap-32">
           <IntroSection />
           <PhilosophySection />
@@ -38,12 +39,14 @@ const AboutMainSection = () => {
 
 const IntroSection = () => {
   return (
-    <div className="who-we-are-section flex flex-row justify-between">
-      <div className="text-section w-3/5 flex gap-6 flex-col">
-        <h1 className="text-6xl font-bold">
+    <div className="who-we-are-section flex flex-col gap-6 lg:flex-row justify-between">
+      <div className="text-section lg:w-3/5 flex gap-6 flex-col">
+        <H1 className="md:text-6xl text-4xl text-left font-bold">
           Who We Are: <br />
-          <span className=" text-5xl">Beyond Code, Building Possibilities</span>
-        </h1>
+          <span className="text-3xl md:text-5xl">
+            Beyond Code, Building Possibilities
+          </span>
+        </H1>
         <div className="flex flex-col text-lg gap-3">
           <p>
             Technology is evolving at lightning speed, but true digital
@@ -60,13 +63,14 @@ const IntroSection = () => {
           </p>
         </div>
       </div>
-      <div className="img-section flex flex-col gap-3">
-        <div className="relative w-72 h-40 web-and-mobile-dev bg-[url('/mobile-web.jpg')] bg-cover">
+      {/* @to-do - this must be auto scroll with more boxes */}
+      <div className="img-section flex flex-row flex-wrap lg:flex-col gap-3">
+        <div className="relative w-full h-72 lg:w-72 lg:h-40 web-and-mobile-dev bg-[url('/mobile-web.jpg')] bg-cover">
           <div className="flex flex-row gap-2 items-center justify-between  web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3">
             Web & Mobile Development <FaArrowRight />
           </div>
         </div>
-        <div className="relative w-72 h-40  ui-ux-design bg-[url('/ui-ux-design.jpg')] bg-cover">
+        <div className="relative w-full h-72 lg:w-72 lg:h-40  ui-ux-design bg-[url('/ui-ux-design.jpg')] bg-cover">
           <div className="flex flex-row gap-2 items-center justify-between web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3">
             UI/UX Design <FaArrowRight />
           </div>
@@ -78,12 +82,14 @@ const IntroSection = () => {
 
 const PhilosophySection = () => {
   return (
-    <div className="who-we-are-section flex flex-row-reverse justify-between">
-      <div className="text-section w-3/5 flex gap-6 flex-col">
-        <h1 className="text-6xl font-bold">
+    <div className="who-we-are-section flex lg:flex-row-reverse flex-col gap-6 justify-between">
+      <div className="text-section w-full lg:w-3/5 flex gap-6 flex-col">
+        <H1 className="md:text-6xl text-4xl text-left font-bold">
           Our Philosophy: <br />
-          <span className="text-5xl">Business First, Technology Second </span>
-        </h1>
+          <span className="text-3xl md:text-5xl">
+            Business First, Technology Second{" "}
+          </span>
+        </H1>
         <div className="flex flex-col text-lg gap-3">
           <p>
             In a world rushing to adopt AI and digital trends, many businesses
@@ -114,7 +120,7 @@ const PhilosophySection = () => {
           alt="our_philosophy_img"
           width={390}
           height={393}
-          className="h-96 w-96"
+          className="w-full h-auto"
         />
       </div>
     </div>
@@ -164,18 +170,16 @@ const CoreValueSection = () => {
   ];
 
   return (
-    <section className="bg-[url('/core-values-bg.png')] min-h-[32rem] w-screen py-16 relative overflow-hidden">
+    <section className="bg-[url('/core-values-bg.png')] bg-no-repeat bg-cover  md:min-h-[32rem] w-screen py-16 relative overflow-hidden">
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold text-white mb-4">
-            Our Core Values
-          </h1>
+          <H1 className="text-white mb-8">Our Core Values</H1>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300/80 to-blue-400/80 mx-auto"></div>
         </div>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <CoreValueCard key={index} {...value} />
           ))}
@@ -231,9 +235,9 @@ const TeamSection = () => {
       <div className="team-section-content flex flex-col gap-12">
         <VisionMissionCards />
         <div className="team-members flex flex-col items-center gap-12">
-          <h1 className="text-3xl md:text-5xl font-medium  text-center">
+          <H1 className="text-center">
             Meet the Team: <br /> The Minds Behind the Initiative
-          </h1>
+          </H1>
           <ul className="team-members-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             <li className="flex flex-col gap-1">
               <Image
@@ -268,7 +272,7 @@ const TeamSection = () => {
           </ul>
         </div>
         <section className="our-supporters flex flex-col justify-center items-center ">
-          <h1 className="text-5xl font-medium">Our Supporters</h1>
+          <H1 className="">Our Supporters</H1>
           {/* <InfiniteCarousel /> */}
           <div className="h-[10rem] 2xl:px-32 xl:px-16 px-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
@@ -288,33 +292,33 @@ const VisionMissionCards = () => {
   return (
     <section className="vision-mission-cards   py-12">
       <div className="vision-mission-content flex flex-col gap-8">
-        <div className="vision-card relative w-full h-96 bg-white  rounded-lg shadow-xl ">
+        <div className="vision-card overflow-hidden relative w-full h-64 md:h-96 bg-white  rounded-lg shadow-xl ">
           <Image
             src={"/vision-design.svg"}
             alt="vision-design"
             width={605}
             height={316}
-            className="absolute left-0 h-full w-auto rounded-tl-lg rounded-b-lg "
+            className="absolute md:-left-10 lg:left-0 opacity-30 lg:opacity-100 h-full w-auto rounded-tl-lg rounded-b-lg "
           />
-          <div className="absolute left-1/2 top-[20%] flex flex-col gap-2">
-            <h1 className="text-5xl font-bold">Vision</h1>
-            <p className="text-xl w-[550px]">
+          <div className="absolute md:left-1/3 lg:left-1/2 left-10 top-[20%] flex flex-col gap-2">
+            <H1 className="text-left">Vision</H1>
+            <p className="text-xl max-w-[550px]">
               To become a global leader in digital innovation, shaping the
               future of AI-powered, tech-driven businesses across industries.
             </p>
           </div>
         </div>
-        <div className="mission-card relative w-full h-96 bg-white  rounded-lg shadow-xl">
+        <div className="mission-card relative w-full h-64 md:h-96 bg-white  rounded-lg shadow-xl">
           <Image
             src={"/mission-design.svg"}
             alt="vision-design"
             width={605}
             height={316}
-            className="absolute right-0 h-full w-auto  "
+            className="absolute right-0 h-full w-auto  opacity-30 md:opacity-100 "
           />
-          <div className="absolute left-20 top-[25%] flex flex-col gap-2">
-            <h1 className="text-5xl font-bold">Mission</h1>
-            <p className="text-xl w-[550px]">
+          <div className="absolute md:left-20 left-10 top-[25%] flex flex-col gap-2">
+            <H1 className="text-left">Mission</H1>
+            <p className="text-xl md:w-[550px]">
               To empower businesses with technology that drives growth, enhances
               efficiency, and creates exceptional digital experiences.{" "}
             </p>

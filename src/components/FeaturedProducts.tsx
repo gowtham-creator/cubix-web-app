@@ -18,13 +18,13 @@ export const FeaturedProductsSection = () => {
           <TabsList className="w-full py-10 px-2 bg-transparent  border-black border-2 flex flex-row gap-2">
             <TabsTrigger
               value="logic-gen"
-              className="py-4 w-1/2 text-2xl data-[state=active]:bg-black data-[state=active]:text-white hover:bg-gray-400"
+              className="py-4 w-1/2 text-2xl data-[state=active]:bg-black data-[state=active]:text-white hover:text-black"
             >
               LogicGen
             </TabsTrigger>
             <TabsTrigger
               value="Ava"
-              className="py-4 w-1/2 text-2xl data-[state=active]:bg-black  data-[state=active]:text-white hover:bg-gray-400 hover:text-black"
+              className="py-4 w-1/2 text-2xl data-[state=active]:bg-black  data-[state=active]:text-white  hover:text-black"
             >
               Ava
             </TabsTrigger>

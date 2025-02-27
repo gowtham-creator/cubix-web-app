@@ -274,7 +274,7 @@ const SendMessageForm = () => {
         <H1 className="">Send a Message</H1>
         <form
           onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}
-          className="md:w-5/6 w-full"
+          className="md:w-5/6 w-full mt-8"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* How can we help you dropdown */}
@@ -303,7 +303,7 @@ const SendMessageForm = () => {
               <Input
                 id="companyName"
                 placeholder="Your company name"
-                className="bg-white"
+                className="bg-white "
                 {...register("companyName")}
               />
             </div>
