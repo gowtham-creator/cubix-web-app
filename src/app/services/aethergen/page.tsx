@@ -7,6 +7,7 @@ import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 import { GiCube } from "react-icons/gi";
 import { GoShieldLock } from "react-icons/go";
+import { SingleDescriptionList } from "@components/SingleDescriptionList";
 
 const AetherGenPage = () => {
   return (
@@ -86,46 +87,6 @@ const AiAutomationSection = () => {
         </p>
       </div>
     </section>
-  );
-};
-
-const DescriptionList = ({
-  listItems,
-  pointColor,
-}: {
-  listItems: string[];
-  pointColor: string;
-}) => {
-  return (
-    <div className="w-full max-w-3xl  py-8 px-4">
-      <ul className="relative">
-        {listItems.map((point, index) => (
-          <li key={index} className="flex mb-8 relative">
-            {/* Number circle with blue background */}
-            <div className="relative z-10">
-              <div
-                className={cn(
-                  "flex items-center justify-center  text-white rounded-full w-10 h-10 font-bold",
-                  pointColor,
-                )}
-              >
-                {index + 1}
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="ml-6 mt-1">
-              <h3 className="text-lg font-medium">{point}</h3>
-            </div>
-
-            {/* Connecting line (except for the last item) */}
-            {index < listItems.length - 1 && (
-              <div className="absolute top-12 left-5 w-px h-8 bg-gray-400"></div>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
   );
 };
 
@@ -224,7 +185,7 @@ const EnginneringAiSection = () => {
             {feature.Image}
             <div className="flex flex-col gap-2 ">
               <H1 className="text-left">{feature.title}</H1>
-              <DescriptionList
+              <SingleDescriptionList
                 listItems={feature.descriptionPoints}
                 pointColor={feature.pointColor}
               />
@@ -336,7 +297,7 @@ const GenAiMoreFeatSection = () => {
             {feature.Image}
             <div className="flex flex-col gap-2 ">
               <H1 className="text-left">{feature.title}</H1>
-              <DescriptionList
+              <SingleDescriptionList
                 listItems={feature.descriptionPoints}
                 pointColor={feature.pointColor}
               />

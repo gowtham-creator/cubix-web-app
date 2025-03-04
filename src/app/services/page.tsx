@@ -1,3 +1,4 @@
+import { SendMessageForm } from "@components/ContactForm";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 import { Button } from "@shadcn/button";
@@ -24,6 +25,7 @@ const Servicespage = () => {
         </p>
       </section>
       <ServicesListSection />
+      <SendMessageForm />
     </div>
   );
 };
