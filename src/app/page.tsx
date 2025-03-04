@@ -10,6 +10,7 @@ import { GoArrowRight } from "react-icons/go";
 import { MdMail } from "react-icons/md";
 import { H1 } from "@components/Heading";
 import { SendMessageForm } from "@components/ContactForm";
+import { Footer } from "@components/Footer";
 
 export default function Home() {
   return (
@@ -37,6 +38,7 @@ export default function Home() {
       <FeaturedProductsSection />
       <StayAheadSection />
       <SendMessageForm />
+      <Footer />
     </div>
   );
 }

@@ -32,9 +32,9 @@ export const FeaturedProductsSection = () => {
           <TabsContent value="logic-gen">
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-9">
               <div className="w-full lg:w-1/2 flex flex-col justify-between items-start gap-4">
-                <h1 className="text-5xl font-semibold leading-[1em]">
+                <H1 className="text-left leading-[1em]">
                   Logicgen: genai-Powered DMN modeler
-                </h1>
+                </H1>
                 <p className="text-lg">
                   Designed for engineering-first teams, LogicGen automates DMN
                   table, diagram, and executable generation, enabling seamless
@@ -59,25 +59,25 @@ export const FeaturedProductsSection = () => {
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-9">
               <div className="w-full lg:w-1/2 flex flex-col justify-between items-start gap-4">
                 <H1 className="text-left leading-[1em]">
-                  Logicgen: genai-Powered DMN modeler
+                  Ava Ai: Your friendly AI companion{" "}
                 </H1>
                 <p className="text-lg">
-                  Designed for engineering-first teams, LogicGen automates DMN
-                  table, diagram, and executable generation, enabling seamless
-                  OpenShift deployment. With built-in ambiguity analysis and
-                  edge-case detection, it ensures precision-driven decision
-                  automation for modern enterprises.
+                  Ava.ai is more than just an app.it&apos;s a revolution in
+                  mental wellness support. We&apos;re a team dedicated to
+                  building the world&apos;s leading AI companion, focused on
+                  fostering genuine connection and empowering individuals on
+                  their path to emotional well-being.{" "}
                 </p>
                 <Button className="bg-black rounded-none p-5">
                   Learn more <GoArrowRight />
                 </Button>
               </div>
               <Image
-                src={"/logic-gen-img.png"}
+                src={"/ava-ai.png"}
                 alt="logic gen"
                 width={516}
                 height={271}
-                className="h-auto lg:w-[600px] w-full"
+                className="h-auto lg:w-[600px] w-full rounded-lg"
               />
             </div>
           </TabsContent>

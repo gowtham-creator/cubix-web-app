@@ -1,4 +1,5 @@
 import { InfiniteMovingCards } from "@accernity/infinite-moving-cards";
+import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 
@@ -18,6 +19,7 @@ const AboutPage = () => {
     <div>
       <Header />
       <AboutMainSection />
+      <Footer />
     </div>
   );
 };
@@ -179,7 +181,7 @@ const CoreValueSection = () => {
           <H1 className="text-white mb-8">Our Core Values</H1>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300/80 to-blue-400/80 mx-auto"></div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8">
           {values.map((value, index) => (
             <CoreValueCard key={index} {...value} />
           ))}
