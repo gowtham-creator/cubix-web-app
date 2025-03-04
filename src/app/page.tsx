@@ -8,17 +8,6 @@ import Link from "next/link";
 import { FaCalendar } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
 import { MdMail } from "react-icons/md";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import {
-  Select,
-  SelectTrigger,
-  SelectValue,
-  SelectContent,
-  SelectItem,
-} from "@shadcn/select";
-import { Textarea } from "@shadcn/textarea";
-import { Label } from "@shadcn/label";
 import { H1 } from "@components/Heading";
 import { SendMessageForm } from "@components/ContactForm";
 

@@ -30,6 +30,7 @@ export const SendMessageForm = () => {
   const helpType = watch("helpType");
   const [data, setData] = useState("");
 
+  console.log(data);
   return (
     <section className="bg-[url('/form-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="form-content  2xl:px-32  xl:px-16 px-10 pt-8 flex flex-col items-center gap-5  ">
