@@ -128,7 +128,10 @@ export const SendMessageForm = () => {
             />
           </div>
 
-          <Button type="submit" className="w-full md:w-auto mt-4">
+          <Button
+            type="submit"
+            className="w-full rounded-none px-8 hover:bg-[#006BFF] py-5 md:w-auto mt-4"
+          >
             Submit
           </Button>
         </form>

@@ -13,7 +13,7 @@ const Servicespage = () => {
     <div className="flex flex-col gap-12">
       <Header />
       <section className="out-services-head 2xl:px-32  xl:px-16 px-10  mt-4 flex flex-col items-center gap-4">
-        <H1 className="text-4xl md:text-6xl">
+        <H1 className="text-4xl md:text-6xl font-medium">
           <span className="text-[#006FFF]">Our Services:</span>
           Future-Ready
           <br /> Solutions for Digital Excellence
@@ -116,7 +116,7 @@ const ServicesListSection = () => {
             className={cn("h-auto border border-gray-300 ", service.className)}
           >
             <div className="text-section flex flex-col gap-2 p-5">
-              <h2 className="font-semibold text-4xl">{service.title}</h2>
+              <h2 className="font-medium text-4xl">{service.title}</h2>
               <p className="text-lg">{service.description}</p>
               <Button className="w-fit text-white p-5 text-base hover:text-black rounded-none hover:bg-white">
                 Learn More <GoArrowRight />

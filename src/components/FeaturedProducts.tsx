@@ -32,8 +32,8 @@ export const FeaturedProductsSection = () => {
           <TabsContent value="logic-gen">
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-9">
               <div className="w-full lg:w-1/2 flex flex-col justify-between items-start gap-4">
-                <H1 className="text-left leading-[1em]">
-                  Logicgen: genai-Powered DMN modeler
+                <H1 className="text-left font-medium leading-[1em]">
+                  Logicgen: GenAi-Powered DMN modeler
                 </H1>
                 <p className="text-lg">
                   Designed for engineering-first teams, LogicGen automates DMN
@@ -42,7 +42,7 @@ export const FeaturedProductsSection = () => {
                   edge-case detection, it ensures precision-driven decision
                   automation for modern enterprises.
                 </p>
-                <Button className="bg-black rounded-none p-5">
+                <Button className="bg-black rounded-none font-medium hover:bg-[#006BFF] hover:text-white  p-5">
                   Learn more <GoArrowRight />
                 </Button>
               </div>
@@ -58,7 +58,7 @@ export const FeaturedProductsSection = () => {
           <TabsContent value="Ava">
             <div className="flex flex-col-reverse lg:flex-row justify-between w-full gap-9">
               <div className="w-full lg:w-1/2 flex flex-col justify-between items-start gap-4">
-                <H1 className="text-left leading-[1em]">
+                <H1 className="text-left font-medium leading-[1em]">
                   Ava Ai: Your friendly AI companion{" "}
                 </H1>
                 <p className="text-lg">
@@ -68,7 +68,7 @@ export const FeaturedProductsSection = () => {
                   fostering genuine connection and empowering individuals on
                   their path to emotional well-being.{" "}
                 </p>
-                <Button className="bg-black rounded-none p-5">
+                <Button className="bg-black rounded-none font-medium hover:bg-[#006BFF] hover:text-white  p-5">
                   Learn more <GoArrowRight />
                 </Button>
               </div>

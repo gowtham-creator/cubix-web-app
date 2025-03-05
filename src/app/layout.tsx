@@ -32,7 +32,7 @@ const customFont = localFont({
     },
     {
       path: "./fonts/GraphikSemibold.otf",
-      weight: "600",
+      weight: "500",
       style: "normal",
     },
   ],
@@ -52,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${customFont.className}   antialiased `}>
+      <body className={`${customFont.className}  antialiased `}>
         {children}
       </body>
     </html>

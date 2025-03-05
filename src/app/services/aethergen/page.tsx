@@ -3,11 +3,12 @@ import { H1 } from "@components/Heading";
 import { cn } from "lib/utils";
 import Image from "next/image";
 import React from "react";
-import { LiaProjectDiagramSolid } from "react-icons/lia";
 import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 import { GiCube } from "react-icons/gi";
 import { GoShieldLock } from "react-icons/go";
 import { SingleDescriptionList } from "@components/SingleDescriptionList";
+import { SendMessageForm } from "@components/ContactForm";
+import { Footer } from "@components/Footer";
 
 const AetherGenPage = () => {
   return (
@@ -19,6 +20,8 @@ const AetherGenPage = () => {
       <GenAiMoreFeatSection />
       <LLMOpSection />
       <AiFrameworksSection />
+      <SendMessageForm />
+      <Footer />
     </div>
   );
 };
@@ -27,7 +30,7 @@ const HeroSection = () => {
   return (
     <section className="flex flex-col mt-12  lg:h-screen lg:px-0 gap-8 lg:relative">
       <div className="flex flex-col lg:flex-row-reverse gap-8 w-full lg:relative">
-        <div className="text-part flex flex-col gap-2  text-left lg:absolute lg:right-10 lg:w-1/2 px-10 lg:top-0 xl:top-10 xl:right-24">
+        <div className="text-part flex flex-col gap-2  text-left lg:absolute lg:right-10 lg:w-1/2 sm:px-10 px-4 lg:top-0 xl:top-10 xl:right-24">
           <H1 className="text-[#006FFF] text-left font-bold ">AetherGen</H1>
           <H1 className="md:text-4xl text-left ">
             Generative AI Solutions Suite
@@ -46,7 +49,7 @@ const HeroSection = () => {
           width={764}
           height={752}
           alt="omni-stack"
-          className="px-10 w-full lg:w-[700px] lg:h-auto lg:absolute lg:-left-44 xl:w-[800px]"
+          className="sm:px-10 px-4 w-full lg:w-[700px] lg:h-auto lg:absolute lg:-left-44 xl:w-[800px]"
         />
       </div>
       <Image
@@ -180,7 +183,7 @@ const EnginneringAiSection = () => {
         {agiGenFeatures.map((feature) => (
           <div
             key={feature.title}
-            className="flex flex-row gap-8 items-center lg:-translate-x-24"
+            className="flex flex-col lg:flex-row gap-8 items-center lg:-translate-x-24"
           >
             {feature.Image}
             <div className="flex flex-col gap-2 ">
@@ -292,7 +295,7 @@ const GenAiMoreFeatSection = () => {
         {agiGenFeatures.map((feature) => (
           <div
             key={feature.title}
-            className="flex flex-row-reverse gap-8 items-center lg:translate-x-24"
+            className="flex flex-row-reverse gap-8 items-center "
           >
             {feature.Image}
             <div className="flex flex-col gap-2 ">
@@ -315,7 +318,15 @@ const LLMOpSection = () => {
       title: "Model Selection & Training",
       subtitle:
         "Data curation, fine-tuning, and optimization for enterprise use.",
-      icon: <LiaProjectDiagramSolid className="h-8 w-8 mb-2 ml-3" />,
+      icon: (
+        <Image
+          src={"/modeling.svg"}
+          width={50}
+          height={50}
+          alt="model-image-icon"
+          className="h-8 w-8 mb-2 ml-3"
+        />
+      ),
       bgColor: "bg-[#006FFF]",
       textColor: "text-[#006FFF]",
     },
@@ -434,7 +445,7 @@ const AiFrameworksSection = () => {
   ];
 
   return (
-    <section className="2xl:px-32 xl:px-16 px-10 mt-48">
+    <section className="2xl:px-32 xl:px-16 px-10 mt-48 md:mb-20">
       <div className="content-ai-frameworks flex flex-col gap-3">
         <div className="heading-section flex flex-col items-center">
           <H1>AI Frameworks & Responsible AI</H1>

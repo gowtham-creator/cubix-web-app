@@ -65,7 +65,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
             href={link.href}
             className={cn(
               "relative group",
-              "text-base font-medium",
+              "text-base font-normal",
               "transition-all duration-300 ease-in-out",
               "hover:text-blue-600", // Hover color change
               "before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5",
