@@ -64,15 +64,42 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
             key={link.name}
             href={link.href}
             className={cn(
-              "hover:font-bold",
-              pathname === link.href && "font-bold",
-              theme === "black" ? "text-white" : "text-black",
+              "relative group",
+              "text-base font-medium",
+              "transition-all duration-300 ease-in-out",
+              "hover:text-blue-600", // Hover color change
+              "before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5",
+              "before:bg-blue-600 before:transition-all before:duration-300 before:ease-in-out",
+              "hover:before:w-full", // Underline animation
+              pathname === link.href
+                ? "text-blue-600 font-semibold before:w-full "
+                : "",
+              theme === "black"
+                ? "text-white hover:text-blue-300"
+                : "text-black hover:text-blue-800",
+              "cursor-pointer",
+              "transform origin-center",
+              "inline-block",
+              "py-1 px-2", // Add some padding for better hover area
+              "hover:scale-105", // Slight scale on hover
+              "transition-transform duration-200", // Smooth scale transition
             )}
           >
-            {link.name}
+            <span className="relative inline-block">
+              {link.name}
+              <span
+                className={cn(
+                  "absolute inset-0 z-[-1]",
+                  "opacity-0",
+                  "group-hover:opacity-50",
+                  "transition-all duration-300 ease-in-out",
+                  "rounded-md", // Rounded background
+                )}
+              />
+            </span>
           </Link>
         ))}
-      </nav>
+      </nav>{" "}
       <MdMenu
         onClick={toggleNav}
         className={cn(
@@ -101,7 +128,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
               onClick={toggleNav}
               className={cn(
                 "text-lg hover:font-bold text-white",
-                pathname === link.href && "font-bold",
+                pathname === link.href && "font-bold text-blue-300", // Active state styling
               )}
             >
               {link.name}
