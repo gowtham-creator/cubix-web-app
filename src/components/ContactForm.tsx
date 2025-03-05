@@ -33,7 +33,7 @@ export const SendMessageForm = () => {
   console.log(data);
   return (
     <section className="bg-[url('/form-bg.png')] bg-cover bg-bottom min-h-[80vh]">
-      <div className="form-content  2xl:px-32  xl:px-16 px-10 pt-8 flex flex-col items-center gap-5  ">
+      <div className="form-content  2xl:px-32  xl:px-16 sm:px-10 px-4 pt-8 flex flex-col items-center gap-5  ">
         <H1 className="">Send a Message</H1>
         <form
           onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}

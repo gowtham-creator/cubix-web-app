@@ -1,3 +1,5 @@
+import { SendMessageForm } from "@components/ContactForm";
+import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 import { cn } from "lib/utils";
@@ -11,14 +13,16 @@ const OmniStackPage = () => {
       <HeroSection />
       <FoundationSection />
       <MoreServicesSection />
+      <SendMessageForm />
+      <Footer />
     </div>
   );
 };
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen">
-      <div className="absolute text-part flex flex-col gap-2 text-left right-20 w-[50vw] top-32">
+    <section className="lg:relative min-h-screen lg:block flex flex-col gap-4 mt-4">
+      <div className="lg:absolute text-part flex flex-col gap-2 px-4 sm:px-10 text-left right-20 lg:w-[50vw] lg:top-16">
         <H1 className="text-[#006FFF] text-left font-bold">OmniStack</H1>
         <H1 className="md:text-4xl text-left ">
           Building Seamless Digital Experiences,
@@ -36,14 +40,14 @@ const HeroSection = () => {
         width={764}
         height={752}
         alt="omni-stack"
-        className="left-[-200px] absolute h-[700px] w-auto"
+        className="lg:left-[-200px] lg:absolute lg:h-[500px] xl:h-[650px] 2xl:h-[700px] lg:w-auto sm:px-10  w-full h-auto px-4"
       />
       <Image
         src={"/Squiggle.svg"}
         width={1032}
         height={387}
         alt="squiggle-svg"
-        className="absolute bottom-0 right-0"
+        className="lg:absolute -bottom-10 right-0"
       />
     </section>
   );
@@ -64,7 +68,7 @@ const FoundationSection = () => {
         />
       ),
       className:
-        "user-centric-design rounded-lg  w-full md:col-span-3 md:row-span-3  p-4 shadow-lg flex flex-col-reverse items-center",
+        "user-centric-design rounded-lg  w-full md:col-span-3 md:row-span-3  p-4  shadow-lg flex flex-col-reverse items-center",
       titleColor: "text-purple-800",
     },
     {
@@ -114,7 +118,7 @@ const FoundationSection = () => {
         />
       ),
       className:
-        "security-compliance md:col-span-4 md:row-span-3 md:p-2 rounded-lg  shadow-lg flex flex-col gap-4  items-center",
+        "security-compliance md:col-span-4 md:row-span-3 md:p-2 rounded-lg p-3  shadow-lg flex flex-col gap-4  items-center",
       titleColor: "text-purple-800",
     },
   ];
@@ -144,7 +148,7 @@ const FoundationSection = () => {
   };
 
   return (
-    <section className="2xl:px-32 h-full  xl:px-16 px-10 mt-32 flex flex-col items-center gap-20 mb-20">
+    <section className="2xl:px-32 h-full  xl:px-16 sm:px-10 px-4 mt-32 flex flex-col items-center gap-20 md:mb-20 mb-8">
       <div className="foundation-heading flex flex-col gap-2 items-center">
         <H1>The Foundation</H1>
         <p className="text-lg md:text-xl max-w-2xl text-center">
@@ -152,7 +156,7 @@ const FoundationSection = () => {
           app, or a full-fledged enterprise system, we ensure
         </p>
       </div>
-      <div className="foundation-items w-full grid grid-cols-1  md:grid-cols-7 md:grid-rows-7 gap-4 max-w-3xl md:h-[90vh]">
+      <div className="foundation-items w-full grid grid-cols-1  md:grid-cols-7 md:grid-rows-7 gap-4 max-w-3xl md:min-h-[700px]">
         {foundationItems.map((foundation) => (
           <div className={cn("", foundation.className)} key={foundation.title}>
             <div className="flex flex-col items-center">
@@ -200,7 +204,7 @@ const MoreServicesSection = () => {
           alt="web dev"
           width={5200}
           height={7868}
-          className="md:h-[70vh] md:w-auto w-full h-auto"
+          className=" lg:h-[70vh] lg:w-auto w-full h-[300px] xs:h-[320px] sm:h-[500px] object-cover"
         />
       ),
     },
@@ -233,7 +237,7 @@ const MoreServicesSection = () => {
           alt="mobile app dev"
           width={3456}
           height={5184}
-          className="md:h-[70vh] md:w-auto w-full h-auto "
+          className=" lg:h-[70vh] lg:w-auto w-full h-[300px] xs:h-[320px] sm:h-[500px] object-cover"
         />
       ),
     },
@@ -261,7 +265,7 @@ const MoreServicesSection = () => {
           alt="web dev"
           width={298}
           height={396}
-          className="md:h-[62vh] md:w-auto w-full h-auto"
+          className=" lg:h-[63vh] lg:w-auto w-full h-[300px] xs:h-[320px] sm:h-[500px] object-cover"
         />
       ),
     },
@@ -286,8 +290,12 @@ const MoreServicesSection = () => {
 
               {/* Content */}
               <div className="ml-6 mt-1">
-                <h3 className="text-lg font-semibold">{point.title}</h3>
-                <p className="text-gray-600">{point.subtitle}</p>
+                <h3 className="text-base sm:text-lg font-semibold">
+                  {point.title}
+                </h3>
+                <p className="text-gray-600 text-xs xs:text-base">
+                  {point.subtitle}
+                </p>
               </div>
 
               {/* Connecting line (except for the last item) */}
@@ -303,19 +311,19 @@ const MoreServicesSection = () => {
 
   return (
     // @to-do add animation
-    <section className="more-services-section mt-32 min-h-screen bg-[url('/more-service-bg.png')] bg-cover bg-no-repeat bg-top">
-      <div className="more-service-content  2xl:px-32  xl:px-16 px-10">
+    <section className="more-services-section mt-32 min-h-screen bg-[url('/more-service-bg.png')] bg-cover bg-no-repeat bg-bottom mb-8 md:mb-32">
+      <div className="more-service-content  2xl:px-32  xl:px-16 sm:px-10 px-4">
         {/* <div className="absolute -right-[60vw] top-36 -z-10 h-[50vh] w-[75vw] gradient-ball bg-blue-600 blur-[500px] rounded-full "></div> */}
-        <div className="services-cards md:px-32 md:h-[70vh] flex flex-col gap-16 overflow-y-scroll">
+        <div className="services-cards   flex flex-col gap-16 ">
           {serviceCards.map((service) => (
             <div
               key={service.title}
-              className="flex md:flex-row flex-col w-full gap-20 items-center"
+              className="flex lg:flex-row flex-col w-full gap-20 items-start"
             >
               {service.Image}
               <div className="card-content">
                 <H1 className="text-left">{service.title}</H1>
-                <h2 className="text-xl text-gray-600 mt-2">
+                <h2 className="text-lg sm:text-xl text-gray-600 mt-2">
                   {service.subtitle}
                 </h2>
                 <DescriptionList listItems={service.descriptionPoints} />

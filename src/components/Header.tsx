@@ -43,7 +43,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
   return (
     <header
       className={cn(
-        "px-10 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
+        "sm:px-10 px-4 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
         className,
       )}
     >
