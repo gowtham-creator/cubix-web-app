@@ -41,10 +41,10 @@ const ServicesListSection = () => {
         "flex flex-col-reverse col-span-1 lg:col-span-2 justify-between pb-5",
       Image: (
         <Image
-          src={"/aether-gen.png"}
+          src={"/services/aethergen-service.png"}
           alt="aether gen image"
-          width={436}
-          height={239}
+          width={1704}
+          height={956}
           className="h-auto w-full"
         />
       ),
@@ -55,10 +55,10 @@ const ServicesListSection = () => {
       className: "col-span-1 lg:col-span-3 lg:relative pt-8",
       Image: (
         <Image
-          src={"/omni-stack.png"}
+          src={"/services/omnistack-phone.png"}
           alt="aether gen image"
-          width={260}
-          height={315}
+          width={1040}
+          height={1260}
           className="h-80 xl:h-[350px] w-auto lg:absolute  bottom-0 left-[25%]"
         />
       ),
@@ -69,10 +69,10 @@ const ServicesListSection = () => {
       className: "col-span-1 lg:col-span-3 py-5",
       Image: (
         <Image
-          src={"/cloudmorph.png"}
+          src={"/services/cloud-morph.png"}
           alt="aether gen image"
-          width={436}
-          height={239}
+          width={2068}
+          height={964}
           className="lg:h-80 w-auto"
         />
       ),
@@ -83,11 +83,11 @@ const ServicesListSection = () => {
       className: "col-span-1 lg:col-span-2 lg:relative pt-5 ",
       Image: (
         <Image
-          src={"/immersi-xr.png"}
+          src={"/services/immerixr.png"}
           alt="aether gen image"
-          width={302}
-          height={323}
-          className="lg:absolute right-0 bottom-0"
+          width={1208}
+          height={1290}
+          className="lg:absolute h-80 w-auto right-0 bottom-0"
         />
       ),
     },
@@ -98,11 +98,11 @@ const ServicesListSection = () => {
         "col-span-1 lg:col-span-5 flex flex-col justify-between lg:items-center lg:flex-row-reverse",
       Image: (
         <Image
-          src={"/Africa.png"}
+          src={"/services/Africa.png"}
           alt="aether gen image"
-          width={436}
-          height={239}
-          className="h-auto w-full"
+          width={2358}
+          height={1812}
+          className="h-auto w-full lg:h-[350px] xl:h-[500px] lg:w-auto"
         />
       ),
     },
@@ -118,7 +118,7 @@ const ServicesListSection = () => {
             <div className="text-section flex flex-col gap-2 p-5">
               <h2 className="font-medium text-4xl">{service.title}</h2>
               <p className="text-lg">{service.description}</p>
-              <Button className="w-fit text-white p-5 text-base hover:text-black rounded-none hover:bg-white">
+              <Button className="w-fit text-white p-5 text-base hover:text-white rounded-none hover:bg-[#006BFF] ">
                 Learn More <GoArrowRight />
               </Button>
             </div>

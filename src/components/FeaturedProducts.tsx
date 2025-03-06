@@ -47,10 +47,10 @@ export const FeaturedProductsSection = () => {
                 </Button>
               </div>
               <Image
-                src={"/logic-gen-img.png"}
+                src={"/home/dmn-modeler.png"}
                 alt="logic gen"
-                width={516}
-                height={271}
+                width={2062}
+                height={1084}
                 className="h-auto lg:w-[600px] w-full"
               />
             </div>
@@ -73,7 +73,7 @@ export const FeaturedProductsSection = () => {
                 </Button>
               </div>
               <Image
-                src={"/ava-ai.png"}
+                src={"/home/ava-ai.png"}
                 alt="logic gen"
                 width={516}
                 height={271}

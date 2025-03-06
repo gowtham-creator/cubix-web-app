@@ -16,6 +16,27 @@ import localFont from "next/font/local";
 const customFont = localFont({
   src: [
     {
+      path: "./fonts/GraphikBlack.otf",
+      weight: "900",
+      style: "normal",
+    },
+
+    {
+      path: "./fonts/GraphikBold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GraphikSemibold.otf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/GraphikMedium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
       path: "./fonts/GraphikRegular.otf",
       weight: "400",
       style: "normal",
@@ -26,13 +47,13 @@ const customFont = localFont({
       style: "italic",
     },
     {
-      path: "./fonts/GraphikBold.otf",
-      weight: "700",
+      path: "./fonts/GraphikLight.otf",
+      weight: "300",
       style: "normal",
     },
     {
-      path: "./fonts/GraphikSemibold.otf",
-      weight: "500",
+      path: "./fonts/GraphikExtralight.otf",
+      weight: "200",
       style: "normal",
     },
   ],

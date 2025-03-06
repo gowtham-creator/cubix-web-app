@@ -27,7 +27,7 @@ const AboutPage = () => {
 const AboutMainSection = () => {
   return (
     <>
-      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 px-10 object-contain bg-[url('/about-main-bg.png')] bg-no-repeat">
+      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about-main-bg.png')] bg-no-repeat">
         <div className="about-us-cards flex flex-col flex-wrap py-16 gap-32">
           <IntroSection />
           <PhilosophySection />
@@ -43,7 +43,7 @@ const IntroSection = () => {
   return (
     <div className="who-we-are-section flex flex-col gap-6 lg:flex-row justify-between">
       <div className="text-section lg:w-3/5 flex gap-6 flex-col">
-        <H1 className="md:text-6xl text-4xl text-left font-bold">
+        <H1 className="md:text-6xl text-4xl text-left font-semibold">
           Who We Are: <br />
           <span className="text-3xl md:text-5xl">
             Beyond Code, Building Possibilities
@@ -86,7 +86,7 @@ const PhilosophySection = () => {
   return (
     <div className="who-we-are-section flex lg:flex-row-reverse flex-col gap-6 justify-between">
       <div className="text-section w-full lg:w-3/5 flex gap-6 flex-col">
-        <H1 className="md:text-6xl text-4xl text-left font-bold">
+        <H1 className="md:text-6xl text-4xl text-left font-semibold">
           Our Philosophy: <br />
           <span className="text-3xl md:text-5xl">
             Business First, Technology Second{" "}
@@ -118,11 +118,11 @@ const PhilosophySection = () => {
       </div>
       <div className="img-section">
         <Image
-          src={"/philosophy-image.png"}
+          src={"/our-philosophy.png"}
           alt="our_philosophy_img"
-          width={390}
-          height={393}
-          className="w-full h-auto"
+          width={1560}
+          height={1572}
+          className="w-full h-auto md:h-[450px] md:w-auto"
         />
       </div>
     </div>
@@ -142,7 +142,7 @@ const CoreValueCard = ({
     <div className="bg-gradient-to-br from-amber-500/80 to-blue-800/80 p-4 rounded-xl shadow-lg">
       <Icon className="h-8 w-8 text-white" />
     </div>
-    <h2 className="text-2xl font-bold text-white">{title}</h2>
+    <h2 className="text-2xl font-medium text-white">{title}</h2>
     <p className="text-white/80 text-center text-lg">{description}</p>
   </div>
 );
@@ -279,15 +279,15 @@ const TeamSection = () => {
 
 const VisionMissionCards = () => {
   return (
-    <section className="vision-mission-cards   py-12">
-      <div className="vision-mission-content flex flex-col gap-8">
-        <div className="vision-card overflow-hidden relative w-full h-64 md:h-96 bg-white  rounded-lg shadow-xl ">
+    <section className="vision-mission-cards py-8   md:py-16">
+      <div className="vision-mission-content flex flex-col md:items-center gap-8">
+        <div className="vision-card overflow-hidden relative w-full h-64 md:h-80 max-w-5xl bg-white  rounded-lg shadow-xl ">
           <Image
             src={"/vision-design.svg"}
             alt="vision-design"
             width={605}
             height={316}
-            className="absolute md:-left-10 lg:left-0 opacity-30 lg:opacity-100 h-full w-auto rounded-tl-lg rounded-b-lg "
+            className="absolute md:-left-32 lg:-left-8 opacity-30 lg:opacity-100 h-full w-auto rounded-tl-lg rounded-b-lg "
           />
           <div className="absolute md:left-1/3 lg:left-1/2 left-10 top-[20%] flex flex-col gap-2">
             <H1 className="text-left">Vision</H1>
@@ -297,7 +297,7 @@ const VisionMissionCards = () => {
             </p>
           </div>
         </div>
-        <div className="mission-card relative w-full h-64 md:h-96 bg-white  rounded-lg shadow-xl">
+        <div className="mission-card relative w-full h-64  bg-white md:h-80 max-w-5xl   rounded-lg shadow-xl">
           <Image
             src={"/mission-design.svg"}
             alt="vision-design"

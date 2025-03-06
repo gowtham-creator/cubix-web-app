@@ -48,7 +48,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
       )}
     >
       <div className="logo-section ">
-        <div className="logo  ">
+        <Link href={"/"} className="logo ">
           <Image
             src={theme === "white" ? "/logo-black.svg" : "/logo-white.svg"}
             alt="Cubixso"
@@ -56,7 +56,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
             height={32}
             className="h-10 w-auto"
           />
-        </div>
+        </Link>
       </div>
       <nav className="hidden md:flex flex-row gap-5">
         {links.map((link) => (

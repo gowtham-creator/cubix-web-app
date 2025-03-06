@@ -15,13 +15,13 @@ import { Footer } from "@components/Footer";
 export default function Home() {
   return (
     <div>
-      <section className="bg-[url('/hero-bg.png')] min-h-screen bg-cover bg-bottom">
+      <section className="bg-[url('/home/hero-bg.png')] min-h-screen bg-cover bg-bottom">
         <Header theme="black" />
         <div className="hero-section 2xl:px-32 xl:px-16 px-10 mt-20 md:mt-32 flex gap-5 flex-col">
           <h1 className="text-6xl font-semibold text-[#BFB080]">
             Where Innovation Takes Flight
           </h1>
-          <p className="text-white max-w-2xl  font-thin text-xl">
+          <p className="text-white max-w-2xl font-normal  text-xl">
             We are a team of passionate engineers and design strategists,
             modernizing businesses with Digital Engineering, AI/ML, UI/UX, and
             Performance Marketing. From legacy transformation to future-ready
@@ -123,19 +123,19 @@ const ScheduleSection = () => {
     },
   ];
   return (
-    <section className="bg-[url('/digital-transformation-bg.png')]  min-h-screen bg-cover bg-bottom">
+    <section className="bg-[url('/home/digital-transformation-bg.png')]  min-h-screen bg-cover bg-bottom">
       <div className="scedule-content 2xl:px-32 xl:px-16 px-10 py-20  flex flex-col gap-16">
         <H1 className="">Your Doorway to Digital Transformation</H1>
         <div className="stratergic-section flex items-center justify-center gap-4 lg:gap-10 lg:flex-row flex-col md:justify-around">
           <Image
-            src={"/doorway.png"}
+            src={"/home/digital-transform.png"}
             alt="doorway-image"
             width={500}
             height={400}
             className="rounded-sm w-full h-auto lg:w-1/2"
           />
           <div className="text-section flex flex-col gap-4 w-full lg:w-1/2  ">
-            <h2 className="text-left font-medium text-3xl">
+            <h2 className="text-left font-semibold text-3xl">
               Stratergic modernization for measurable impact
             </h2>
             <p>
@@ -150,7 +150,7 @@ const ScheduleSection = () => {
               business intelligence, and seamless user experiences.{" "}
             </p>
             <div className="buttons flex flex-col sm:flex-row gap-2">
-              <Button className="rounded-none px-8 py-5 hover:bg-[#006BFF] font-medium">
+              <Button className="rounded-none px-8 py-5   hover:bg-[#006BFF] font-medium">
                 <FaCalendar /> Schedule a consultation
               </Button>
               <Button
@@ -185,7 +185,7 @@ const ScheduleSection = () => {
 
 const BeyondFameSection = () => {
   return (
-    <section className="bg-[url('/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
+    <section className="bg-[url('/home/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="beyond-fame-content 2xl:px-32 xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
         <H1 className="text-white text-left text-4xl">
           Beyond the Hype: <br /> Smart, Cost-Effective GenAI
@@ -207,7 +207,7 @@ const BeyondFameSection = () => {
 
 const StayAheadSection = () => {
   return (
-    <section className="bg-[url('/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
+    <section className="bg-[url('/home/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 md:py-28 sm:py-16 py-10 flex flex-col gap-5 ">
         <div className="flex flex-col gap-4 max-w-4xl">
           <H1 className="text-4xl md:text-6xl text-white text-left">

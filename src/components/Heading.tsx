@@ -9,7 +9,7 @@ interface Props {
 export const H1: FC<Props> = ({ className, children }) => {
   return (
     <h1
-      className={cn("text-3xl md:text-5xl font-normal text-center", className)}
+      className={cn("text-3xl md:text-5xl font-medium text-center", className)}
     >
       {children}
     </h1>
