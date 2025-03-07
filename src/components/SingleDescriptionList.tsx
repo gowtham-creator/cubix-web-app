@@ -26,7 +26,9 @@ const SingleDescriptionList = ({
 
             {/* Content */}
             <div className="ml-6 mt-1">
-              <h3 className="text-lg font-medium">{point}</h3>
+              <h3 className="text-sm sm:text-base md:text-lg font-normal lg:text-base xl:text-lg  md:font-medium">
+                {point}
+              </h3>
             </div>
 
             {/* Connecting line (except for the last item) */}

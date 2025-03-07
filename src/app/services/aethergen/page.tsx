@@ -1,3 +1,4 @@
+"use client";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 import { cn } from "lib/utils";
@@ -9,6 +10,7 @@ import { GoShieldLock } from "react-icons/go";
 import { SingleDescriptionList } from "@components/SingleDescriptionList";
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
+import { LeftOrientedCard } from "@components/LeftOrientedCard";
 
 const AetherGenPage = () => {
   return (
@@ -103,15 +105,13 @@ const EnginneringAiSection = () => {
         "AI-enhanced reporting dashboards that deliver insights in plain language, not just numbers.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2 [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/devops.png"}
-            alt="Predictive-analysis"
-            width={268}
-            height={396}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/devops.png"}
+          alt="Predictive-analysis"
+          width={268}
+          height={396}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#1976D2]",
     },
@@ -123,15 +123,13 @@ const EnginneringAiSection = () => {
         "Enable document intelligence – AI-driven document parsing, summarization, and auto-filling.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/wall-e.jpg"}
-            alt="Predictive-analysis"
-            width={268}
-            height={396}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/wall-e.jpg"}
+          alt="Predictive-analysis"
+          width={268}
+          height={396}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#F09B00]",
     },
@@ -143,15 +141,13 @@ const EnginneringAiSection = () => {
         "Generative AI-powered prototyping for product innovation and digital twins for process optimization.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/research-lib.jpg"}
-            alt="Predictive-analysis"
-            width={268}
-            height={396}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/research-lib.jpg"}
+          alt="Predictive-analysis"
+          width={268}
+          height={396}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#613F4C]",
     },
@@ -163,39 +159,21 @@ const EnginneringAiSection = () => {
         "Automate regulatory compliance and audit processes with AI-enhanced validation systems.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/gen-ai-chart.png"}
-            alt="Predictive-analysis"
-            width={268}
-            height={396}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/aethergen/genai-chart.png"}
+          alt="Predictive-analysis"
+          width={1825}
+          height={2068}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#101010]",
     },
   ];
 
   return (
-    <section className="bg-[url('/engineering-bg.png')]  bg-cover bg-no-repeat ">
-      <div className="gen-ai-content-list mt-32 flex flex-col gap-4">
-        {agiGenFeatures.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-col lg:flex-row gap-8 items-center lg:-translate-x-24"
-          >
-            {feature.Image}
-            <div className="flex flex-col gap-2 ">
-              <H1 className="text-left">{feature.title}</H1>
-              <SingleDescriptionList
-                listItems={feature.descriptionPoints}
-                pointColor={feature.pointColor}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="bg-[url('/engineering-bg.png')] bg-contain bg-no-repeat ">
+      <LeftOrientedCard cards={agiGenFeatures} />
       <section className="engineering-ai-section 2xl:px-32 xl:px-16 px-10 mt-32">
         <div className=" flex flex-col items-center justify-center gap-8">
           <div className="text-center">

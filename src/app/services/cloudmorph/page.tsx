@@ -1,5 +1,6 @@
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
+import { LeftOrientedCard } from "@components/LeftOrientedCard";
 import { SingleDescriptionList } from "@components/SingleDescriptionList";
 import Image from "next/image";
 import React from "react";
@@ -85,15 +86,13 @@ const ContinuousInnovation = () => {
         "Hybrid & multi-cloud strategies for enterprise flexibility.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2 [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/cloud-architecture.jpg"}
-            alt="cloud-architecture-img"
-            width={457}
-            height={517}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/cloud-architecture.jpg"}
+          alt="cloud-architecture-img"
+          width={457}
+          height={517}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#1976D2]",
     },
@@ -105,15 +104,13 @@ const ContinuousInnovation = () => {
         "Serverless computing for high-performance, cost-efficient workloads.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/serverless-micro.jpg"}
-            alt="Predictive-analysis"
-            width={457}
-            height={517}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/serverless-micro.jpg"}
+          alt="Predictive-analysis"
+          width={457}
+          height={517}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#1976D2]",
     },
@@ -125,15 +122,13 @@ const ContinuousInnovation = () => {
         "FinOps strategies to track and control cloud costs in real-time.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/cloud-cost.jpg"}
-            alt="Predictive-analysis"
-            width={268}
-            height={396}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/cloud-cost.jpg"}
+          alt="Predictive-analysis"
+          width={268}
+          height={396}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#1976D2]",
     },
@@ -141,23 +136,7 @@ const ContinuousInnovation = () => {
 
   return (
     <section className="bg-[url('/engineering-bg.png')]  bg-cover bg-no-repeat ">
-      <div className="gen-ai-content-list mt-32 flex flex-col gap-4">
-        {cloudFeatures.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-row gap-8 items-center lg:-translate-x-24"
-          >
-            {feature.Image}
-            <div className="flex flex-col gap-2 ">
-              <H1 className="text-left">{feature.title}</H1>
-              <SingleDescriptionList
-                listItems={feature.descriptionPoints}
-                pointColor={feature.pointColor}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+      <LeftOrientedCard cards={cloudFeatures} />
       <section className="engineering-ai-section 2xl:px-32 xl:px-16 px-10 mt-32">
         <div className=" flex flex-col items-center justify-center gap-8">
           <div className="text-center">
