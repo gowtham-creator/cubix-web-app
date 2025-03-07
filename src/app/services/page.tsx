@@ -1,3 +1,5 @@
+"use client";
+
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
@@ -5,6 +7,7 @@ import { H1 } from "@components/Heading";
 import { Button } from "@shadcn/button";
 import { cn } from "lib/utils";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
 
@@ -48,6 +51,7 @@ const ServicesListSection = () => {
           className="h-auto w-full"
         />
       ),
+      link: "/services/aethergen",
     },
     {
       title: "OmniStack – Full-Stack Development",
@@ -62,6 +66,7 @@ const ServicesListSection = () => {
           className="h-80 xl:h-[350px] w-auto lg:absolute  bottom-0 left-[25%]"
         />
       ),
+      link: "/services/omnistack",
     },
     {
       title: "CloudMorph – DevOps & Cloud Solutions",
@@ -76,6 +81,7 @@ const ServicesListSection = () => {
           className="lg:h-80 w-auto"
         />
       ),
+      link: "/services/cloudmorph",
     },
     {
       title: "ImmersiXR – AR/VR Solutions",
@@ -90,6 +96,7 @@ const ServicesListSection = () => {
           className="lg:absolute h-80 w-auto right-0 bottom-0"
         />
       ),
+      link: "/services",
     },
     {
       title: "EnterpriseX – ERP & Business Solutions",
@@ -105,8 +112,12 @@ const ServicesListSection = () => {
           className="h-auto w-full lg:h-[350px] xl:h-[500px] lg:w-auto"
         />
       ),
+      link: "/services",
     },
   ];
+
+  const router = useRouter();
+
   return (
     <section className="services-list 2xl:px-32 xl:px-16 px-10 mb-12">
       <div className="services-content-grid grid grid-cols-1 lg:grid-cols-5 border border-gray-300 rounded-lg">
@@ -118,7 +129,10 @@ const ServicesListSection = () => {
             <div className="text-section flex flex-col gap-2 p-5">
               <h2 className="font-medium text-4xl">{service.title}</h2>
               <p className="text-lg">{service.description}</p>
-              <Button className="w-fit text-white p-5 text-base hover:text-white rounded-none hover:bg-[#006BFF] ">
+              <Button
+                onClick={() => router.push(service.link)}
+                className="w-fit text-white p-5 text-base hover:text-white rounded-none hover:bg-[#006BFF] "
+              >
                 Learn More <GoArrowRight />
               </Button>
             </div>

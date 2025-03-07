@@ -71,7 +71,8 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
               "before:absolute before:bottom-[-4px] before:left-0 before:w-0 before:h-0.5",
               "before:bg-blue-600 before:transition-all before:duration-300 before:ease-in-out",
               "hover:before:w-full", // Underline animation
-              pathname === link.href
+              pathname === link.href ||
+                (link.href !== "/" && pathname.startsWith(link.href))
                 ? "text-blue-600 font-semibold before:w-full "
                 : "",
               theme === "black"

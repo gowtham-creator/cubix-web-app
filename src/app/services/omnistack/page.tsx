@@ -60,9 +60,9 @@ const FoundationSection = () => {
       description: "Ensuring intuitive, engaging, and accessible experiences.",
       Image: (
         <Image
-          src={"/user-centric-img.png"}
-          width={221}
-          height={221}
+          src={"/omnistack/user-centric-img.png"}
+          width={884}
+          height={884}
           alt="user-centric"
           className="md:h-40 md:w-auto w-[70%] h-auto"
         />
@@ -77,9 +77,9 @@ const FoundationSection = () => {
         "Architecting applications that load fast and scale effortlessly",
       Image: (
         <Image
-          src={"/performance-optimization.png"}
-          width={354}
-          height={354}
+          src={"/omnistack/performance-opt.png"}
+          width={1416}
+          height={1416}
           alt="performance-optimization"
           className="md:h-60 md:w-auto w-[70%] h-auto"
         />
@@ -93,9 +93,9 @@ const FoundationSection = () => {
       description: "Creating fluid interactions between front-end and back-end",
       Image: (
         <Image
-          src={"/seamless-func.png"}
-          width={283}
-          height={195}
+          src={"/omnistack/seamless-func.png"}
+          width={1132}
+          height={830}
           alt="seamless-functionality"
           className="md:h-48 md:w-auto w-[70%] h-auto"
         />
@@ -110,9 +110,9 @@ const FoundationSection = () => {
         "Protecting data, transactions, and user privacy with robust security protocols.",
       Image: (
         <Image
-          src={"/security-compliance.png"}
-          width={298}
-          height={188}
+          src={"/omnistack/security-compliance.png"}
+          width={1192}
+          height={752}
           alt="user-centric"
           className="md:w-64 md:h-auto w-[70%] h-auto"
         />
