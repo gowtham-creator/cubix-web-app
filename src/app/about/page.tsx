@@ -27,7 +27,7 @@ const AboutPage = () => {
 const AboutMainSection = () => {
   return (
     <>
-      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about-main-bg.png')] bg-no-repeat">
+      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about/about-main-bg.png')] bg-no-repeat">
         <div className="about-us-cards flex flex-col flex-wrap py-16 gap-32">
           <IntroSection />
           <PhilosophySection />
@@ -118,7 +118,7 @@ const PhilosophySection = () => {
       </div>
       <div className="img-section">
         <Image
-          src={"/our-philosophy.png"}
+          src={"/about/our-philosophy.png"}
           alt="our_philosophy_img"
           width={1560}
           height={1572}
@@ -172,7 +172,7 @@ const CoreValueSection = () => {
   ];
 
   return (
-    <section className="bg-[url('/core-values-bg.png')] bg-no-repeat bg-cover  md:min-h-[32rem] w-screen py-16 relative overflow-hidden">
+    <section className="bg-[url('/about/core-values-bg.png')] bg-no-repeat bg-cover  md:min-h-[32rem] w-screen py-16 relative overflow-hidden">
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
 
@@ -193,12 +193,15 @@ const CoreValueSection = () => {
 
 const TeamSection = () => {
   const supporters = [
-    "/google-devs.png",
-    "/atlassian.png",
-    "/digital-ocean.png",
-    "/mongo.png",
-    "/aws.png",
-    "/google-devs.png",
+    "/about/dpiit.png",
+    "/about/msft.png",
+    "/about/neo4j.png",
+    "/about/wadhwani.png",
+    "/about/atlassian.png",
+    "/about/digital-ocean.png",
+    "/about/mongo.png",
+    "/about/aws.png",
+    "/about/google-devs.png",
   ];
 
   const trustedBy = [
@@ -210,7 +213,7 @@ const TeamSection = () => {
   ];
 
   return (
-    <section className="team-section bg-[url('/vision-mission-bg.png')] 2xl:px-32 xl:px-16 px-10  bg-contain bg-no-repeat bg-top min-h-screen">
+    <section className="team-section bg-[url('/about/vision-mission-bg.png')] 2xl:px-32 xl:px-16 px-10  bg-contain bg-no-repeat bg-top min-h-screen">
       <div className="team-section-content flex flex-col gap-12">
         <VisionMissionCards />
         <div className="team-members flex flex-col items-center gap-12">
@@ -220,7 +223,7 @@ const TeamSection = () => {
           <ul className="team-members-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             <li className="flex flex-col gap-1">
               <Image
-                src={"/gowtham.png"}
+                src={"/about/gowtham.png"}
                 alt="founder-img"
                 width={350}
                 height={350}
@@ -230,7 +233,7 @@ const TeamSection = () => {
             </li>
             <li className="flex flex-col gap-1">
               <Image
-                src={"/sudheer.png"}
+                src={"/about/sudheer.png"}
                 alt="founder-img"
                 width={350}
                 height={350}
@@ -240,7 +243,7 @@ const TeamSection = () => {
             </li>
             <li className="flex flex-col gap-1">
               <Image
-                src={"/uncle.png"}
+                src={"/about/uncle.png"}
                 alt="founder-img"
                 width={350}
                 height={350}
@@ -283,7 +286,7 @@ const VisionMissionCards = () => {
       <div className="vision-mission-content flex flex-col md:items-center gap-8">
         <div className="vision-card overflow-hidden relative w-full h-64 md:h-80 max-w-5xl bg-white  rounded-lg shadow-xl ">
           <Image
-            src={"/vision-design.svg"}
+            src={"/about/vision-design.svg"}
             alt="vision-design"
             width={605}
             height={316}
@@ -299,7 +302,7 @@ const VisionMissionCards = () => {
         </div>
         <div className="mission-card relative w-full h-64  bg-white md:h-80 max-w-5xl   rounded-lg shadow-xl">
           <Image
-            src={"/mission-design.svg"}
+            src={"/about/mission-design.svg"}
             alt="vision-design"
             width={605}
             height={316}
