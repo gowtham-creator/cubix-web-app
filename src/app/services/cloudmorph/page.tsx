@@ -1,7 +1,7 @@
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
-import { SingleDescriptionList } from "@components/SingleDescriptionList";
+import { RightOrientedCard } from "@components/RightOrientedCard";
 import Image from "next/image";
 import React from "react";
 
@@ -169,22 +169,20 @@ const ContinuousInnovation = () => {
 const DevopsMoreFeatures = () => {
   const devopsFeatures = [
     {
-      title: "CI/CD Automation & Infrastructure as Code (IaC)",
+      title: "CI/CD Automation & Infrastructure as Code",
       descriptionPoints: [
         "End-to-end CI/CD pipelines for frictionless deployments.",
         "GitOps-based workflow automation to reduce manual errors.",
         "Terraform, Ansible, and Kubernetes automation for infrastructure scalability.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2 [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/terraform.jpg"}
-            alt="Retrieval-Augmented"
-            width={406}
-            height={517}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/terraform.jpg"}
+          alt="Retrieval-Augmented"
+          width={406}
+          height={517}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#6517CF]",
     },
@@ -196,15 +194,13 @@ const DevopsMoreFeatures = () => {
         "AI-driven anomaly detection to preempt infrastructure failures.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/observability.jpg"}
-            alt="observability img"
-            width={2840}
-            height={2160}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/observability.jpg"}
+          alt="observability img"
+          width={2840}
+          height={2160}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#244317]",
     },
@@ -216,41 +212,19 @@ const DevopsMoreFeatures = () => {
         "Zero-trust architecture & API security for bulletproof protection.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/dev-secops.png"}
-            alt="Predictive-analysis"
-            width={461}
-            height={495}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/dev-secops.png"}
+          alt="Predictive-analysis"
+          width={461}
+          height={495}
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
+        />
       ),
       pointColor: "bg-[#613F4C]",
     },
   ];
 
-  return (
-    <section>
-      <div className="devops-content-list mt-32 flex flex-col gap-4">
-        {devopsFeatures.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-row-reverse gap-8 items-center lg:translate-x-24"
-          >
-            {feature.Image}
-            <div className="flex flex-col gap-2 ">
-              <H1 className="text-left">{feature.title}</H1>
-              <SingleDescriptionList
-                listItems={feature.descriptionPoints}
-                pointColor={feature.pointColor}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return <RightOrientedCard cards={devopsFeatures} />;
 };
 
 const CloudSecuritySection = () => {
@@ -263,15 +237,13 @@ const CloudSecuritySection = () => {
         "API security & threat detection for cloud-native applications.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2 [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/identity-mangement.png"}
-            alt="identity-mangement"
-            width={406}
-            height={517}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/identity-mangement.png"}
+          alt="identity-mangement"
+          width={406}
+          height={517}
+          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+        />
       ),
       pointColor: "bg-[#119EAA]",
     },
@@ -283,15 +255,13 @@ const CloudSecuritySection = () => {
         "Automated threat detection & response to mitigate attacks in real-time.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/cloud-goveranance.png"}
-            alt="cloud-gov-img"
-            width={2840}
-            height={2160}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/cloud-goveranance.png"}
+          alt="cloud-gov-img"
+          width={2840}
+          height={2160}
+          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+        />
       ),
       pointColor: "bg-gray-500",
     },
@@ -303,15 +273,13 @@ const CloudSecuritySection = () => {
         "Automated rollback & recovery mechanisms for enterprise resilience.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/dev-secops.png"}
-            alt="Predictive-analysis"
-            width={461}
-            height={495}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/dev-secops.png"}
+          alt="Predictive-analysis"
+          width={461}
+          height={495}
+          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+        />
       ),
       pointColor: "bg-[#613F4C]",
     },
@@ -337,21 +305,22 @@ const CloudSecuritySection = () => {
         </div>
       </div>
       <div className="devops-content-list mt-32 flex flex-col gap-4">
-        {devopsSecurityFeatures.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-row-reverse gap-8 items-center lg:translate-x-24"
-          >
-            {feature.Image}
-            <div className="flex flex-col gap-2 ">
-              <H1 className="text-left">{feature.title}</H1>
-              <SingleDescriptionList
-                listItems={feature.descriptionPoints}
-                pointColor={feature.pointColor}
-              />
-            </div>
-          </div>
-        ))}
+        <RightOrientedCard cards={devopsSecurityFeatures} />
+        {/* {devopsSecurityFeatures.map((feature) => ( */}
+        {/*   <div */}
+        {/*     key={feature.title} */}
+        {/*     className="flex flex-row-reverse gap-8 items-center lg:translate-x-24" */}
+        {/*   > */}
+        {/*     {feature.Image} */}
+        {/*     <div className="flex flex-col gap-2 "> */}
+        {/*       <H1 className="text-left">{feature.title}</H1> */}
+        {/*       <SingleDescriptionList */}
+        {/*         listItems={feature.descriptionPoints} */}
+        {/*         pointColor={feature.pointColor} */}
+        {/*       /> */}
+        {/*     </div> */}
+        {/*   </div> */}
+        {/* ))} */}
       </div>
     </section>
   );

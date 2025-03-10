@@ -7,10 +7,10 @@ import React from "react";
 import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 import { GiCube } from "react-icons/gi";
 import { GoShieldLock } from "react-icons/go";
-import { SingleDescriptionList } from "@components/SingleDescriptionList";
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
+import { RightOrientedCard } from "@components/RightOrientedCard";
 
 const AetherGenPage = () => {
   return (
@@ -213,15 +213,13 @@ const GenAiMoreFeatSection = () => {
         "Fine-tuned models that learn from past interactions and evolve dynamically.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2 [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/rag.jpg"}
-            alt="Retrieval-Augmented"
-            width={4320}
-            height={4320}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/rag.jpg"}
+          alt="Retrieval-Augmented"
+          width={4320}
+          height={4320}
+          className="rounded-[110px] lg:w-[450px] lg:h-[400px] xl:w-[500px] xl:h-[450px] object-cover w-full h-[450px] "
+        />
       ),
       pointColor: "bg-[#8A4B9A]",
     },
@@ -233,15 +231,13 @@ const GenAiMoreFeatSection = () => {
         "Context-aware automation that reduces hallucination and increases relevance.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/light-tunnel.jpg"}
-            alt="cag-image"
-            width={2840}
-            height={2160}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/light-tunnel.jpg"}
+          alt="cag-image"
+          width={2840}
+          height={2160}
+          className="rounded-[110px] lg:w-[450px] lg:h-[400px] xl:w-[500px] xl:h-[450px] object-cover w-full h-[450px] "
+        />
       ),
       pointColor: "bg-[#472C31]",
     },
@@ -253,41 +249,19 @@ const GenAiMoreFeatSection = () => {
         "Next-gen chatbots that go beyond scripted responses and engage in dynamic, human-like conversations.",
       ],
       Image: (
-        <div className=" border-2 border-dashed border-gray-300 rounded-[110px] p-2  [border-dash-length:20px] [border-dash-gap:6px]">
-          <Image
-            src={"/cube.jpg"}
-            alt="Predictive-analysis"
-            width={4288}
-            height={2848}
-            className="rounded-[110px] w-[500px] h-[450px] object-cover "
-          />
-        </div>
+        <Image
+          src={"/cube.jpg"}
+          alt="Predictive-analysis"
+          width={4288}
+          height={2848}
+          className="rounded-[110px] lg:w-[450px] lg:h-auto xl:w-[500px] xl:h-[450px] object-cover w-full h-[450px] "
+        />
       ),
       pointColor: "bg-[#613F4C]",
     },
   ];
 
-  return (
-    <section>
-      <div className="gen-ai-content-list mt-32 flex flex-col gap-4">
-        {agiGenFeatures.map((feature) => (
-          <div
-            key={feature.title}
-            className="flex flex-row-reverse gap-8 items-center "
-          >
-            {feature.Image}
-            <div className="flex flex-col gap-2 ">
-              <H1 className="text-left">{feature.title}</H1>
-              <SingleDescriptionList
-                listItems={feature.descriptionPoints}
-                pointColor={feature.pointColor}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+  return <RightOrientedCard cards={agiGenFeatures} />;
 };
 
 const LLMOpSection = () => {
@@ -334,7 +308,7 @@ const LLMOpSection = () => {
     },
   ];
   return (
-    <section className="bg-[url('/llm-ops-bg.png')] min-h-screen bg-cover  bg-bottom bg-no-repeat">
+    <section className="bg-[url('/llm-ops-bg1.png')] min-h-screen my-48 bg-cover  bg-top bg-no-repeat">
       <div className="llm-ops-content 2xl:px-32 xl:px-16 px-10 mt-48">
         <section className="llms-ops-main  ">
           <div className=" flex flex-col items-center justify-center gap-8">
@@ -423,7 +397,7 @@ const AiFrameworksSection = () => {
   ];
 
   return (
-    <section className="2xl:px-32 xl:px-16 px-10 mt-48 md:mb-20">
+    <section className="2xl:px-32 xl:px-16 px-10  md:mb-20">
       <div className="content-ai-frameworks flex flex-col gap-3">
         <div className="heading-section flex flex-col items-center">
           <H1>AI Frameworks & Responsible AI</H1>

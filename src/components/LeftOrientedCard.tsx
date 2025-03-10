@@ -16,7 +16,7 @@ interface Props {
 }
 export const LeftOrientedCard: FC<Props> = ({ cards }) => {
   return (
-    <div className="gen-ai-content-list mt-32 flex flex-col gap-4 px-4 sm:px-10 lg:px-0 ">
+    <div className="left-image-card mt-32 flex flex-col gap-4 px-4 sm:px-10 lg:px-0 ">
       {cards.map((feature) => (
         <Container key={feature.title}>
           <FeatureImage>{feature.Image}</FeatureImage>
