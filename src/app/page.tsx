@@ -11,13 +11,20 @@ import { MdMail } from "react-icons/md";
 import { H1 } from "@components/Heading";
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
+import { motion } from "motion/react";
+import { TextGenerateEffect } from "@accernity/text-generate-effect";
 
 export default function Home() {
   return (
     <div>
-      <section className="bg-[url('/home/hero-bg.png')] min-h-screen bg-cover bg-bottom">
+      <motion.section className="bg-[url('/home/hero-bg.png')] min-h-screen bg-cover bg-bottom">
         <Header theme="black" />
-        <div className="hero-section 2xl:px-32 xl:px-16 px-10 mt-20 md:mt-32 flex gap-5 flex-col">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
+          className="hero-section 2xl:px-32 xl:px-16 px-10 mt-20 md:mt-32 flex gap-5 flex-col"
+        >
           <h1 className="text-6xl font-semibold text-[#BFB080]">
             Where Innovation Takes Flight
           </h1>
@@ -27,11 +34,11 @@ export default function Home() {
             Performance Marketing. From legacy transformation to future-ready
             experiences, we make innovation effortless.
           </p>
-          <Button className="w-fit bg-[#BFB080] p-5 text-base font-normal text-black rounded-none hover:text-white hover:bg-[#006BFF]">
+          <Button className="w-fit bg-[#BFB080] py-5 px-5 text-base flex flex-row gap-5 items-center font-normal text-black rounded-none hover:text-white hover:bg-[#006BFF]">
             Learn More <GoArrowRight />
           </Button>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
       <PartnerSection />
       <ScheduleSection />
       <BeyondFameSection />
@@ -79,10 +86,30 @@ const PartnerSection = () => {
   return (
     <section className=" bg-[url('/partner-us-bg.png')] min-h-[80vh] bg-contain bg-no-repeat bg-right-top ">
       <div className="2xl:px-32 xl:px-16 px-10 py-10 flex flex-col gap-10 md:gap-20">
-        <H1 className="text-center">Why partner with us</H1>
+        <motion.span
+          initial={{ scale: 0.8, filter: "blur(10px)" }}
+          whileInView={{ scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: true, amount: 0.75 }}
+          transition={{
+            duration: 0.3,
+            delay: 0.1,
+          }}
+        >
+          <H1 className="text-center">Why partner with us</H1>
+        </motion.span>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
           {listItems.map((item) => (
-            <li key={item.title} className="flex flex-col gap-4">
+            <motion.li
+              initial={{ scale: 0.8, filter: "blur(10px)" }}
+              whileInView={{ scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.75 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+              }}
+              key={item.title}
+              className="flex flex-col gap-4"
+            >
               {/* <div className="bg-white/20 backdrop-blur-lg rounded-lg w-12 h-12 flex justify-center items-center p-3 border border-white/30 shadow-lg"> */}
               {item.Icon}
               {/* </div> */}
@@ -91,7 +118,7 @@ const PartnerSection = () => {
               <Button className="w-fit rounded-none hover:text-white hover:bg-[#006BFF]">
                 Learn More <GoArrowRight />
               </Button>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
@@ -172,8 +199,23 @@ const ScheduleSection = () => {
                 key={approach.title}
                 className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2"
               >
-                <h1 className="font-medium text-xl">{approach.title}</h1>
-                <p>{approach.description}</p>
+                <motion.h1
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
+                  className="font-medium text-xl"
+                >
+                  {approach.title}
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
+                >
+                  {approach.description}
+                </motion.p>
               </div>
             ))}
           </div>
@@ -187,9 +229,11 @@ const BeyondFameSection = () => {
   return (
     <section className="bg-[url('/home/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="beyond-fame-content 2xl:px-32 xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
-        <H1 className="text-white text-left text-4xl">
-          Beyond the Hype: <br /> Smart, Cost-Effective GenAI
-        </H1>
+        <TextGenerateEffect
+          words="Beyond the Hype:  Smart, Cost-Effective GenAI"
+          className="max-w-xl"
+          wordsClassName="text-white text-3xl md:text-5xl font-medium text-left"
+        />
         <p className="max-w-2xl text-white text-lg">
           In the rush to adopt GenAI, businesses often force-fit AI solutions,
           leading to high costs, inefficiencies, and unreliable automation. We
@@ -210,10 +254,12 @@ const StayAheadSection = () => {
     <section className="bg-[url('/home/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 md:py-28 sm:py-16 py-10 flex flex-col gap-5 ">
         <div className="flex flex-col gap-4 max-w-4xl">
-          <H1 className="text-4xl md:text-6xl text-white text-left">
-            Stay Ahead with Real-World <br />
-            Insights
-          </H1>
+          <TextGenerateEffect
+            words="Stay Ahead with Real-World Insights
+"
+            className="max-w-xl"
+            wordsClassName="text-white text-3xl md:text-5xl font-medium text-left"
+          />
           <p className="max-w-2xl text-white text-lg">
             We share real stories of digital transformation, breaking down how
             businesses are adapting to AI, modernization, and shifting industry

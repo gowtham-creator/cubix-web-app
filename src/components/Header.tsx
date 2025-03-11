@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FC, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
+import { motion } from "motion/react";
 
 interface Props {
   className?: string;
@@ -41,7 +42,13 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
   const toggleNav = () => setOpenNav(!openNav);
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.3,
+        y: { type: "keyframes", visualDuration: 0.4 },
+      }}
       className={cn(
         "sm:px-10 px-4 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
         className,
@@ -144,6 +151,6 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
           onClick={toggleNav}
         />
       )}
-    </header>
+    </motion.header>
   );
 };
