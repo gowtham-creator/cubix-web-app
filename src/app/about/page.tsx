@@ -205,11 +205,11 @@ const TeamSection = () => {
   ];
 
   const trustedBy = [
-    "/bolt-abacus-black.png",
-    "/elit-celer.png",
-    "/krower.png",
-    "/tech-savant.png",
-    "/krower.png",
+    "/about/bolt-abacus-black.png",
+    "/about/elit-celer.png",
+    "/about/tech-savant.png",
+    "/about/krower.png",
+    "/about/pursuit-soln.png",
   ];
 
   return (
