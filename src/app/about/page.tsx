@@ -2,6 +2,7 @@ import { InfiniteMovingCards } from "@accernity/infinite-moving-cards";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
+import { ServiceCarousel } from "@components/ServicesCarousel";
 
 import {
   LightbulbIcon,
@@ -12,7 +13,6 @@ import {
 import Image from "next/image";
 import React from "react";
 import { IconType } from "react-icons";
-import { FaArrowRight } from "react-icons/fa";
 
 const AboutPage = () => {
   return (
@@ -41,7 +41,7 @@ const AboutMainSection = () => {
 
 const IntroSection = () => {
   return (
-    <div className="who-we-are-section flex flex-col gap-6 lg:flex-row justify-between">
+    <div className="who-we-are-section flex flex-col gap-20 lg:gap-6 lg:flex-row justify-between">
       <div className="text-section lg:w-3/5 flex gap-6 flex-col">
         <H1 className="md:text-6xl text-4xl text-left font-semibold">
           Who We Are: <br />
@@ -65,19 +65,20 @@ const IntroSection = () => {
           </p>
         </div>
       </div>
+      <ServiceCarousel />
       {/* @to-do - this must be auto scroll with more boxes */}
-      <div className="img-section flex flex-row flex-wrap lg:flex-col gap-3">
-        <div className="relative w-full h-72 lg:w-72 lg:h-40 web-and-mobile-dev bg-[url('/mobile-web.jpg')] bg-cover">
-          <div className="flex flex-row gap-2 items-center justify-between  web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3">
-            Web & Mobile Development <FaArrowRight />
-          </div>
-        </div>
-        <div className="relative w-full h-72 lg:w-72 lg:h-40  ui-ux-design bg-[url('/ui-ux-design.jpg')] bg-cover">
-          <div className="flex flex-row gap-2 items-center justify-between web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3">
-            UI/UX Design <FaArrowRight />
-          </div>
-        </div>
-      </div>
+      {/* <div className="img-section flex flex-row flex-wrap lg:flex-col gap-3"> */}
+      {/*   <div className="relative w-full h-72 lg:w-72 lg:h-40 web-and-mobile-dev bg-[url('/mobile-web.jpg')] bg-cover"> */}
+      {/*     <div className="flex flex-row gap-2 items-center justify-between  web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3"> */}
+      {/*       Web & Mobile Development <FaArrowRight /> */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/*   <div className="relative w-full h-72 lg:w-72 lg:h-40  ui-ux-design bg-[url('/ui-ux-design.jpg')] bg-cover"> */}
+      {/*     <div className="flex flex-row gap-2 items-center justify-between web-mobile-des absolute bottom-0 bg-black w-full text-white text-center px-5 py-3"> */}
+      {/*       UI/UX Design <FaArrowRight /> */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/* </div> */}
     </div>
   );
 };

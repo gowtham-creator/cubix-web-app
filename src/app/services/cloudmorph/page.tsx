@@ -242,7 +242,7 @@ const CloudSecuritySection = () => {
           alt="identity-mangement"
           width={406}
           height={517}
-          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
         />
       ),
       pointColor: "bg-[#119EAA]",
@@ -260,7 +260,7 @@ const CloudSecuritySection = () => {
           alt="cloud-gov-img"
           width={2840}
           height={2160}
-          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
         />
       ),
       pointColor: "bg-gray-500",
@@ -278,7 +278,7 @@ const CloudSecuritySection = () => {
           alt="Predictive-analysis"
           width={461}
           height={495}
-          className="rounded-[110px] w-[500px] h-[450px] object-cover "
+          className="rounded-[110px] w-full h-[450px] lg:w-[500px] lg:h-[450px] "
         />
       ),
       pointColor: "bg-[#613F4C]",
