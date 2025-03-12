@@ -97,7 +97,7 @@ export const InfiniteMovingCards = ({
               alt={`Partner logo ${index + 1}`}
               width={200}
               height={100}
-              className="max-w-full max-h-full object-contain"
+              className="h-24 w-48 object-contain"
             />
           </li>
         ))}

@@ -11,6 +11,7 @@ import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
 import { RightOrientedCard } from "@components/RightOrientedCard";
+import { motion } from "motion/react";
 
 const AetherGenPage = () => {
   return (
@@ -30,9 +31,19 @@ const AetherGenPage = () => {
 
 const HeroSection = () => {
   return (
-    <section className="flex flex-col mt-12  lg:h-screen lg:px-0 gap-8 lg:relative">
-      <div className="flex flex-col lg:flex-row-reverse gap-8 w-full lg:relative">
-        <div className="text-part flex flex-col gap-2  text-left lg:absolute lg:right-10 lg:w-1/2 sm:px-10 px-4 lg:top-0 xl:top-10 xl:right-24">
+    <motion.section
+      initial={{ y: 40 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.3, ease: "easeIn" }}
+      className="flex flex-col mt-12  lg:h-screen lg:px-0 gap-8 lg:relative"
+    >
+      <motion.div className="flex flex-col lg:flex-row-reverse gap-8 w-full lg:relative">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          className="text-part flex flex-col gap-2  text-left lg:absolute lg:right-10 lg:w-1/2 sm:px-10 px-4 lg:top-0 xl:top-10 xl:right-24"
+        >
           <H1 className="text-[#006FFF] text-left font-bold ">AetherGen</H1>
           <H1 className="md:text-4xl text-left ">
             Generative AI Solutions Suite
@@ -45,23 +56,35 @@ const HeroSection = () => {
             business processes, enhance operational efficiency, and bridge the
             gap between data, automation, and real-world applications.
           </p>
-        </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+        >
+          <Image
+            src={"/aether-gen-hero.png"}
+            width={764}
+            height={752}
+            alt="omni-stack"
+            className="sm:px-10 px-4 w-full lg:w-[700px] lg:h-auto lg:absolute lg:-left-44 xl:w-[800px]"
+          />
+        </motion.div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeIn" }}
+      >
         <Image
-          src={"/aether-gen-hero.png"}
-          width={764}
-          height={752}
-          alt="omni-stack"
-          className="sm:px-10 px-4 w-full lg:w-[700px] lg:h-auto lg:absolute lg:-left-44 xl:w-[800px]"
+          src={"/color-squiggle.png"}
+          width={1280}
+          height={262}
+          alt="squiggle-svg"
+          className=" h-auto w-full bottom-0 lg:bottom-20 lg:absolute"
         />
-      </div>
-      <Image
-        src={"/color-squiggle.png"}
-        width={1280}
-        height={262}
-        alt="squiggle-svg"
-        className=" h-auto w-full bottom-0 lg:bottom-0 lg:absolute"
-      />
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

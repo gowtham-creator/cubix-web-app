@@ -1,3 +1,4 @@
+"use client";
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
@@ -5,6 +6,7 @@ import { H1 } from "@components/Heading";
 import { cn } from "lib/utils";
 import Image from "next/image";
 import React, { FC, ReactNode } from "react";
+import { motion } from "motion/react";
 
 const OmniStackPage = () => {
   return (
@@ -21,7 +23,12 @@ const OmniStackPage = () => {
 
 const HeroSection = () => {
   return (
-    <section className="lg:relative min-h-screen lg:block flex flex-col gap-4 mt-4">
+    <motion.section
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeIn" }}
+      className="lg:relative min-h-screen lg:block flex flex-col gap-4 mt-4"
+    >
       <div className="lg:absolute text-part flex flex-col gap-2 px-4 sm:px-10 text-left right-20 lg:w-[50vw] lg:top-16">
         <H1 className="text-[#006FFF] text-left font-bold">OmniStack</H1>
         <H1 className="md:text-4xl text-left ">
@@ -49,7 +56,7 @@ const HeroSection = () => {
         alt="squiggle-svg"
         className="lg:absolute -bottom-10 right-0"
       />
-    </section>
+    </motion.section>
   );
 };
 

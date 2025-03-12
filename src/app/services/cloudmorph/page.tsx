@@ -1,9 +1,11 @@
+"use client";
 import { Header } from "@components/Header";
 import { H1 } from "@components/Heading";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
 import { RightOrientedCard } from "@components/RightOrientedCard";
 import Image from "next/image";
-import React from "react";
+import React, { Fragment } from "react";
+import { motion } from "framer-motion";
 
 const CloudMorphPage = () => {
   return (
@@ -20,30 +22,36 @@ const CloudMorphPage = () => {
 
 const CloudMorphHero = () => {
   return (
-    <section className="min-h-screen flex flex-col px-10 gap-5 mt-8 md:flex-row md:px-0 md:-translate-x-16 lg:-translate-x-20 lg:mt-32 lg:gap-10 ">
-      <Image
-        src={"/devops-hero1.jpg"}
-        width={496}
-        height={405}
-        alt="devops-image"
-        className="w-full h-auto md:h-[400px] lg:w-auto"
-      />
-      <div className="flex flex-col md:w-2/3 lg:w-full lg:gap-2">
-        <H1 className="text-[#006FFF] text-left md:text-4xl lg:text-5xl lg:font-black">
-          CloudMorph – DevOps & Cloud Solutions
-        </H1>
-        <H1 className="text-2xl md:text-2xl lg:text-4xl text-left mb-2">
-          Seamless, Scalable, and Secure Cloud Transformation
-        </H1>
-        <p className="text-lg md:text-xl">
-          We deliver end-to-end DevOps and cloud solutions, ensuring your
-          business operates with speed, efficiency, and reliability. From CI/CD
-          automation to cloud-native engineering and enterprise security, we
-          help businesses evolve beyond traditional IT into fully automated,
-          cloud-driven powerhouses.
-        </p>
+    <motion.section
+      initial={{ y: 40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.3, ease: "easeIn" }}
+    >
+      <div className="min-h-screen flex flex-col px-10 gap-5 mt-8 md:flex-row md:px-0 md:-translate-x-16 lg:-translate-x-20 lg:mt-32  lg:gap-10 ">
+        <Image
+          src={"/devops-hero1.jpg"}
+          width={496}
+          height={405}
+          alt="devops-image"
+          className="w-full h-auto md:h-[400px] lg:w-auto"
+        />
+        <motion.div className="flex flex-col md:w-2/3 lg:w-full lg:gap-2">
+          <H1 className="text-[#006FFF] text-left md:text-4xl lg:text-5xl lg:font-black">
+            CloudMorph – DevOps & Cloud Solutions
+          </H1>
+          <H1 className="text-2xl md:text-2xl lg:text-4xl text-left mb-2">
+            Seamless, Scalable, and Secure Cloud Transformation
+          </H1>
+          <p className="text-lg md:text-xl">
+            We deliver end-to-end DevOps and cloud solutions, ensuring your
+            business operates with speed, efficiency, and reliability. From
+            CI/CD automation to cloud-native engineering and enterprise
+            security, we help businesses evolve beyond traditional IT into fully
+            automated, cloud-driven powerhouses.
+          </p>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,3 +1,4 @@
+"use client";
 import { InfiniteMovingCards } from "@accernity/infinite-moving-cards";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
@@ -13,6 +14,7 @@ import {
 import Image from "next/image";
 import React from "react";
 import { IconType } from "react-icons";
+import { motion } from "motion/react";
 
 const AboutPage = () => {
   return (
@@ -28,10 +30,15 @@ const AboutMainSection = () => {
   return (
     <>
       <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about/about-main-bg.png')] bg-no-repeat">
-        <div className="about-us-cards flex flex-col flex-wrap py-16 gap-32">
+        <motion.div
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          className="about-us-cards flex flex-col flex-wrap py-16 gap-32"
+        >
           <IntroSection />
           <PhilosophySection />
-        </div>
+        </motion.div>
       </section>
       <CoreValueSection />
       <TeamSection />
