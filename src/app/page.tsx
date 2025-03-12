@@ -152,7 +152,12 @@ const ScheduleSection = () => {
   return (
     <section className="bg-[url('/home/digital-transformation-bg.png')]  min-h-screen bg-cover bg-bottom">
       <div className="scedule-content 2xl:px-32 xl:px-16 px-10 py-20  flex flex-col gap-16">
-        <H1 className="">Your Doorway to Digital Transformation</H1>
+        <TextGenerateEffect
+          words="Your Doorway to Digital Transformation"
+          className="text-black text-center"
+          wordsClassName="text-black text-center text-3xl md:text-5xl font-medium text-left"
+        />
+
         <div className="stratergic-section flex items-center justify-center gap-4 lg:gap-10 lg:flex-row flex-col md:justify-around">
           <Image
             src={"/home/digital-transform.png"}
@@ -226,6 +231,21 @@ const ScheduleSection = () => {
 };
 
 const BeyondFameSection = () => {
+  const fadeInFromBlur = {
+    initial: { filter: "blur(10px)", opacity: 0 },
+    whileInView: {
+      filter: ["blur(10px)", "blur(10px)", "blur(0px)"],
+      opacity: [0, 1, 1],
+    },
+    viewport: { once: true, amount: 0.5 },
+    transition: {
+      duration: 0.6,
+      ease: "easeIn",
+      times: [0, 0.5, 1],
+      delay: 0.6,
+    },
+  };
+
   return (
     <section className="bg-[url('/home/beyond-fame-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="beyond-fame-content 2xl:px-32 xl:px-16 px-10 pt-28 flex flex-col gap-5 ">
@@ -234,22 +254,40 @@ const BeyondFameSection = () => {
           className="max-w-xl"
           wordsClassName="text-white text-3xl md:text-5xl font-medium text-left"
         />
-        <p className="max-w-2xl text-white text-lg">
+        <motion.p {...fadeInFromBlur} className="max-w-2xl text-white text-lg">
           In the rush to adopt GenAI, businesses often force-fit AI solutions,
           leading to high costs, inefficiencies, and unreliable automation. We
           take a different path—reverse-engineering business needs first,
           ensuring AI works for you, not against you.
-        </p>
-        <Button className="rounded-none bg-white w-fit text-black font-normal hover:bg-white/80">
+        </motion.p>
+        <motion.button
+          {...fadeInFromBlur}
+          className="rounded-none py-2 px-4 items-center flex flex-row gap-4 bg-white w-fit text-black font-normal hover:bg-white/80"
+        >
           Learn More
           <GoArrowRight />{" "}
-        </Button>
+        </motion.button>
       </div>
     </section>
   );
 };
 
 const StayAheadSection = () => {
+  const fadeInFromBlur = {
+    initial: { filter: "blur(10px)", opacity: 0 },
+    whileInView: {
+      filter: ["blur(10px)", "blur(10px)", "blur(0px)"],
+      opacity: [0, 1, 1],
+    },
+    viewport: { once: true, amount: 0.5 },
+    transition: {
+      duration: 0.6,
+      ease: "easeIn",
+      times: [0, 0.5, 1],
+      delay: 0.6,
+    },
+  };
+
   return (
     <section className="bg-[url('/home/stay-ahead-bg.png')] bg-cover bg-bottom min-h-[80vh]">
       <div className="stay-ahead-content  2xl:px-32  xl:px-16 px-10 md:py-28 sm:py-16 py-10 flex flex-col gap-5 ">
@@ -260,13 +298,19 @@ const StayAheadSection = () => {
             className="max-w-xl"
             wordsClassName="text-white text-3xl md:text-5xl font-medium text-left"
           />
-          <p className="max-w-2xl text-white text-lg">
+          <motion.p
+            {...fadeInFromBlur}
+            className="max-w-2xl text-white text-lg"
+          >
             We share real stories of digital transformation, breaking down how
             businesses are adapting to AI, modernization, and shifting industry
             trends. No fluff—just practical insights to help you make informed
             decisions and stay ahead.{" "}
-          </p>
-          <form className="flex flex-col sm:flex-row gap-4">
+          </motion.p>
+          <motion.form
+            {...fadeInFromBlur}
+            className="flex flex-col sm:flex-row gap-4"
+          >
             <Input
               type="text"
               placeholder="Email ID"
@@ -275,16 +319,19 @@ const StayAheadSection = () => {
             <Button className="rounded-none font-normal h-10 w-full sm:w-52 bg-white text-black hover:text-white">
               Join our newsletter <GoArrowRight />
             </Button>
-          </form>
+          </motion.form>
         </div>
-        <div className="text-lg md:text-xl text-white md:mt-20 mt-5 sm:mt-6 max-w-4xl">
+        <motion.div
+          {...fadeInFromBlur}
+          className="text-lg md:text-xl text-white md:mt-20 mt-5 sm:mt-6 max-w-4xl"
+        >
           Got a Story to Share? – Tell us how your business is evolving with
           technology.{" "}
           <Link href={"/"} className="text-blue-300 font-semibold">
             Submit Your Story{" "}
           </Link>
           and we’ll help share your journey with the world.
-        </div>
+        </motion.div>
       </div>
     </section>
   );

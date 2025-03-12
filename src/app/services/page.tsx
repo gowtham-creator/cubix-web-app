@@ -3,32 +3,48 @@
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { Header } from "@components/Header";
-import { H1 } from "@components/Heading";
 import { Button } from "@shadcn/button";
 import { cn } from "lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
+import { motion } from "motion/react";
 
 const Servicespage = () => {
   return (
     <div className="flex flex-col gap-12">
       <Header />
       <section className="out-services-head 2xl:px-32  xl:px-16 px-10  mt-4 flex flex-col items-center gap-4">
-        <H1 className="text-4xl md:text-6xl font-medium">
+        <motion.h1
+          initial={{ y: 30, filter: "blur(10px)" }}
+          animate={{ y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          className="text-4xl md:text-6xl text-center font-medium"
+        >
           <span className="text-[#006FFF]">Our Services:</span>
           Future-Ready
           <br /> Solutions for Digital Excellence
-        </H1>
-        <p className="text-center text-xl max-w-4xl">
+        </motion.h1>
+        <motion.p
+          initial={{ y: 30, filter: "blur(10px)" }}
+          animate={{ y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+          className="text-center text-xl max-w-4xl"
+        >
           At Cubixso, we don’t just build technology—we redefine how businesses
           operate, scale, and innovate. Our cutting-edge services, from
           AI-powered automation to immersive digital experiences, are designed
           to give your business a competitive edge in a fast-evolving world.
-        </p>
+        </motion.p>
       </section>
-      <ServicesListSection />
+      <motion.div
+        initial={{ y: 50, filter: "blur(10px)" }}
+        animate={{ y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.3, ease: "easeIn", delay: 0.2 }}
+      >
+        <ServicesListSection />
+      </motion.div>
       <SendMessageForm />
       <Footer />
     </div>
