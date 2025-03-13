@@ -4,7 +4,7 @@ import { H1 } from "@components/Heading";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
 import { RightOrientedCard } from "@components/RightOrientedCard";
 import Image from "next/image";
-import React, { Fragment } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const CloudMorphPage = () => {
