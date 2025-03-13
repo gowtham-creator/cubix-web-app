@@ -25,7 +25,7 @@ export const FeaturedProductsSection = () => {
           <TabsList className="w-full py-8 border-1 border-gray-200 shadow-lg bg-white flex flex-row gap-2">
             <TabsTrigger
               value="logic-gen"
-              className="py-4 w-32 sm:w-64  md:w-80 h-fit  sm:text-xl md:text-2xl  data-[state=active]:border-b-4 data-[state=active]:border-[#006BFF] rounded-none data-[state=active]:shadow-none  hover:text-black"
+              className="py-4 w-32  transition-all duration-300 ease-linear sm:w-64  md:w-80 h-fit  sm:text-xl md:text-2xl  data-[state=active]:border-b-4 data-[state=active]:border-[#006BFF] rounded-none data-[state=active]:shadow-none  hover:text-black"
             >
               <span className="flex justify-center items-center font-semibold text-[10px] xs:text-sm h-5 w-5 mr-2 border border-gray-400 rounded-full xs:h-8 xs:w-8">
                 01
@@ -34,7 +34,7 @@ export const FeaturedProductsSection = () => {
             </TabsTrigger>
             <TabsTrigger
               value="ava"
-              className="py-4 w-32  sm:w-64 md:w-80 sm:text-xl md:text-2xl  data-[state=active]:border-b-4 data-[state=active]:border-[#006BFF] rounded-none data-[state=active]:shadow-none  hover:text-black"
+              className="py-4 w-32  transition-all duration-300 ease-linear sm:w-64 md:w-80 sm:text-xl md:text-2xl  data-[state=active]:border-b-4 data-[state=active]:border-[#006BFF] rounded-none data-[state=active]:shadow-none  hover:text-black"
             >
               <span className="flex justify-center items-center font-semibold text-[10px] xs:text-sm h-5 w-5 mr-2 border border-gray-400 rounded-full xs:h-8 xs:w-8">
                 02

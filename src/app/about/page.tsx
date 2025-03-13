@@ -15,6 +15,7 @@ import Image from "next/image";
 import React from "react";
 import { IconType } from "react-icons";
 import { motion } from "motion/react";
+import { TextGenerateEffect } from "@accernity/text-generate-effect";
 
 const AboutPage = () => {
   return (
@@ -179,21 +180,31 @@ const CoreValueSection = () => {
     },
   ];
 
+  const fadeInScroll = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.25 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
   return (
     <section className="bg-[url('/about/core-values-bg.png')] bg-no-repeat bg-cover  md:min-h-[32rem] w-screen py-16 relative overflow-hidden">
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-8">
-        <div className="text-center mb-16">
+        <motion.div {...fadeInScroll} className="text-center mb-16">
           <H1 className="text-white mb-8">Our Core Values</H1>
           <div className="w-24 h-1 bg-gradient-to-r from-yellow-300/80 to-blue-400/80 mx-auto"></div>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8">
+        </motion.div>
+        <motion.div
+          {...fadeInScroll}
+          className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 gap-8"
+        >
           {values.map((value, index) => (
             <CoreValueCard key={index} {...value} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -226,10 +237,28 @@ const TeamSection = () => {
         <VisionMissionCards />
         <div className="team-members flex flex-col items-center gap-12">
           <H1 className="text-center">
-            Meet the Team: <br /> The Minds Behind the Initiative
+            <TextGenerateEffect
+              words={"Meet the Team:"}
+              className="text-black text-center"
+              wordsClassName="text-black text-center text-3xl md:text-5xl font-medium text-left"
+            />
+            <TextGenerateEffect
+              words={"The Minds Behind the Initiative"}
+              className="text-black text-center"
+              wordsClassName="text-black text-center text-3xl md:text-5xl font-medium text-left"
+            />
           </H1>
           <ul className="team-members-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
-            <li className="flex flex-col gap-1">
+            <motion.li
+              initial={{ scale: 0.98, filter: "blur(10px)" }}
+              whileInView={{ scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.75 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.05,
+              }}
+              className="flex flex-col gap-1"
+            >
               <Image
                 src={"/about/gowtham.png"}
                 alt="founder-img"
@@ -238,8 +267,17 @@ const TeamSection = () => {
               />
               <h2 className="font-semibold">Nayini Gowtham Reddy</h2>
               <p>Founder and Managing Director</p>
-            </li>
-            <li className="flex flex-col gap-1">
+            </motion.li>
+            <motion.li
+              initial={{ scale: 0.98, filter: "blur(10px)" }}
+              whileInView={{ scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.75 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.1,
+              }}
+              className="flex flex-col gap-1"
+            >
               <Image
                 src={"/about/sudheer.png"}
                 alt="founder-img"
@@ -248,8 +286,17 @@ const TeamSection = () => {
               />
               <h2 className="font-semibold">Sudheer Kumar Kota</h2>
               <p>Co Founder and CTO</p>
-            </li>
-            <li className="flex flex-col gap-1">
+            </motion.li>
+            <motion.li
+              initial={{ scale: 0.98, filter: "blur(10px)" }}
+              whileInView={{ scale: 1, filter: "blur(0px)" }}
+              viewport={{ once: true, amount: 0.75 }}
+              transition={{
+                duration: 0.3,
+                delay: 0.15,
+              }}
+              className="flex flex-col gap-1"
+            >
               <Image
                 src={"/about/uncle.png"}
                 alt="founder-img"
@@ -258,10 +305,10 @@ const TeamSection = () => {
               />
               <h2 className="font-semibold">Nayini Gowtham Reddy</h2>
               <p>Founder and Managing Director</p>
-            </li>
+            </motion.li>
           </ul>
         </div>
-        <section className="our-supporters flex flex-col justify-center items-center ">
+        <section className="mt-20 our-supporters flex flex-col justify-center items-center ">
           <H1 className="">Our Supporters</H1>
           {/* <InfiniteCarousel /> */}
           <div className="h-[10rem] 2xl:px-32 xl:px-16 px-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
@@ -292,7 +339,13 @@ const VisionMissionCards = () => {
   return (
     <section className="vision-mission-cards py-8   md:py-16">
       <div className="vision-mission-content flex flex-col md:items-center gap-8">
-        <div className="vision-card overflow-hidden relative w-full h-64 md:h-80 max-w-5xl bg-white  rounded-lg shadow-xl ">
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.75 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          className="vision-card overflow-hidden relative w-full h-64 md:h-80 max-w-5xl bg-white  rounded-lg shadow-xl "
+        >
           <Image
             src={"/about/vision-design.svg"}
             alt="vision-design"
@@ -307,8 +360,14 @@ const VisionMissionCards = () => {
               future of AI-powered, tech-driven businesses across industries.
             </p>
           </div>
-        </div>
-        <div className="mission-card relative w-full h-64  bg-white md:h-80 max-w-5xl   rounded-lg shadow-xl">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.75 }}
+          transition={{ duration: 0.3, ease: "easeIn" }}
+          className="mission-card relative w-full h-64  bg-white md:h-80 max-w-5xl   rounded-lg shadow-xl"
+        >
           <Image
             src={"/about/mission-design.svg"}
             alt="vision-design"
@@ -323,7 +382,7 @@ const VisionMissionCards = () => {
               efficiency, and creates exceptional digital experiences.{" "}
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

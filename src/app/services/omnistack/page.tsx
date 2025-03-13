@@ -43,7 +43,7 @@ const HeroSection = () => {
         </p>
       </div>
       <Image
-        src={"/omni-stack-hero.png"}
+        src={"/omnistack/omni-stack-hero.png"}
         width={764}
         height={752}
         alt="omni-stack"
@@ -153,19 +153,32 @@ const FoundationSection = () => {
       </p>
     );
   };
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
 
   return (
     <section className="2xl:px-32 h-full  xl:px-16 sm:px-10 px-4 mt-32 flex flex-col items-center gap-20 md:mb-20 mb-8">
-      <div className="foundation-heading flex flex-col gap-2 items-center">
+      <motion.div
+        {...fadeInfromBottom}
+        className="foundation-heading flex flex-col gap-2 items-center"
+      >
         <H1>The Foundation</H1>
         <p className="text-lg md:text-xl max-w-2xl text-center">
           Whether you need a dynamic web application, a high-performance mobile
           app, or a full-fledged enterprise system, we ensure
         </p>
-      </div>
+      </motion.div>
       <div className="foundation-items w-full grid grid-cols-1  md:grid-cols-7 md:grid-rows-7 gap-4 max-w-3xl md:min-h-[700px]">
         {foundationItems.map((foundation) => (
-          <div className={cn("", foundation.className)} key={foundation.title}>
+          <motion.div
+            {...fadeInfromBottom}
+            className={cn("", foundation.className)}
+            key={foundation.title + "foundation"}
+          >
             <div className="flex flex-col items-center">
               <FeatureTitle className={foundation.titleColor}>
                 {foundation.title}
@@ -173,7 +186,7 @@ const FoundationSection = () => {
               <FeatureDescription>{foundation.description}</FeatureDescription>
             </div>
             {foundation.Image}
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
@@ -316,6 +329,12 @@ const MoreServicesSection = () => {
     );
   };
 
+  const fadeInfromRight = {
+    initial: { x: -100, opacity: 0 },
+    whileInView: { x: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
   return (
     // @to-do add animation
     <section className="more-services-section mt-32 min-h-screen bg-[url('/more-service-bg.png')] bg-cover bg-no-repeat bg-bottom mb-8 md:mb-32">
@@ -323,7 +342,8 @@ const MoreServicesSection = () => {
         {/* <div className="absolute -right-[60vw] top-36 -z-10 h-[50vh] w-[75vw] gradient-ball bg-blue-600 blur-[500px] rounded-full "></div> */}
         <div className="services-cards   flex flex-col gap-16 ">
           {serviceCards.map((service) => (
-            <div
+            <motion.div
+              {...fadeInfromRight}
               key={service.title}
               className="flex lg:flex-row flex-col w-full gap-20 items-start"
             >
@@ -335,7 +355,7 @@ const MoreServicesSection = () => {
                 </h2>
                 <DescriptionList listItems={service.descriptionPoints} />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

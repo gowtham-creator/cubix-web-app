@@ -11,7 +11,7 @@ import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { LeftOrientedCard } from "@components/LeftOrientedCard";
 import { RightOrientedCard } from "@components/RightOrientedCard";
-import { motion } from "motion/react";
+import { motion, MotionProps } from "motion/react";
 
 const AetherGenPage = () => {
   return (
@@ -89,30 +89,48 @@ const HeroSection = () => {
 };
 
 const AiAutomationSection = () => {
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
   return (
     <section className="2xl:px-32 xl:px-16 px-10 mt-32">
       <div className="ai-meets-auto-content flex flex-col items-center justify-center gap-8">
-        <div className="text-center">
+        <motion.div {...fadeInfromBottom} className="text-center">
           <H1 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600  via-pink-500 to-yellow-400">
             Where Intelligence Meets Automation
           </H1>
-          <p className="text-lg md:text-xl text-gray-500 mt-2">
+          <motion.p className="text-lg md:text-xl text-gray-500 mt-2">
             Unleashing AI for Smarter Decision-Making
-          </p>
-        </div>
-        <Image
-          src={"/intelligence-x-auto.png"}
-          width={821}
-          height={461}
-          alt="ai-meets-automation-img"
-          className=""
-        />
-        <p className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl">
+          </motion.p>
+        </motion.div>
+        <motion.div {...blurSharpen}>
+          <Image
+            src={"/intelligence-x-auto.png"}
+            width={821}
+            height={461}
+            alt="ai-meets-automation-img"
+            className=""
+          />
+        </motion.div>
+        <motion.p
+          {...blurSharpen}
+          className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl"
+        >
           Data is everywhere, but insights are scarce. Our Generative AI
           solutions turn raw data into actionable intelligence, helping
           businesses optimize operations, forecast trends, and automate
           decision-making.
-        </p>
+        </motion.p>
       </div>
     </section>
   );
@@ -194,32 +212,52 @@ const EnginneringAiSection = () => {
     },
   ];
 
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
+
   return (
     <section className="bg-[url('/engineering-bg.png')] bg-contain bg-no-repeat ">
       <LeftOrientedCard cards={agiGenFeatures} />
       <section className="engineering-ai-section 2xl:px-32 xl:px-16 px-10 mt-32">
         <div className=" flex flex-col items-center justify-center gap-8">
-          <div className="text-center">
+          <motion.div {...fadeInfromBottom} className="text-center">
             <H1 className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600  via-pink-500 to-yellow-400">
               Engineering AI for Tech
             </H1>
             <p className="text-lg md:text-xl text-gray-500 mt-2">
               The Brains Behind Smarter Systems
             </p>
-          </div>
-          <Image
-            src={"/engineer-ai.png"}
-            width={821}
-            height={461}
-            alt="ai-meets-automation-img"
-            className=""
-          />
-          <p className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl">
+          </motion.div>
+          <motion.div {...blurSharpen}>
+            <Image
+              src={"/engineer-ai.png"}
+              width={821}
+              height={461}
+              alt="ai-meets-automation-img"
+              className=""
+            />
+          </motion.div>
+
+          <motion.p
+            {...fadeInfromBottom}
+            className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl"
+          >
             Generative AI isn’t just about text generation. It’s about enhancing
             reasoning, context-awareness, and decision-making. Our solutions
             integrate advanced AI architectures like RAG, CAG, and AI Agents to
             create truly adaptive AI-driven systems.{" "}
-          </p>
+          </motion.p>
         </div>
       </section>
     </section>
@@ -330,12 +368,40 @@ const LLMOpSection = () => {
       textColor: "text-[#016175]",
     },
   ];
+
+  // For card text content
+  const cardContentReveal = {
+    initial: { opacity: 0, y: 10 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, delay: 0.4 },
+  };
+
+  const dashedLineAnimation = {
+    initial: { height: 0 },
+    whileInView: { height: "4rem" },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.6, delay: 0.4, ease: "easeInOut" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
   return (
     <section className="bg-[url('/llm-ops-bg1.png')] min-h-screen my-48 bg-cover  bg-top bg-no-repeat">
       <div className="llm-ops-content 2xl:px-32 xl:px-16 px-10 mt-48">
-        <section className="llms-ops-main  ">
+        <motion.section className="llms-ops-main  ">
           <div className=" flex flex-col items-center justify-center gap-8">
-            <div className="text-center">
+            <motion.div {...fadeInfromBottom} className="text-center">
               <H1 className="text-transparent bg-clip-text bg-[url('/text-bg.jpg')] ">
                 LLMOps: From Dev to Prod
               </H1>
@@ -343,8 +409,8 @@ const LLMOpSection = () => {
                 End-to-end AI lifecycle management for scalable, efficient, and
                 reliable deployment.{" "}
               </p>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div {...blurSharpen}>
               <Image
                 src={"/llmops.jpg"}
                 width={821}
@@ -353,12 +419,15 @@ const LLMOpSection = () => {
                 className=""
               />
               <div className="w-1 h-16 border-l-2 border-dashed border-gray-400 mx-auto mt-2"></div>
-            </div>
+            </motion.div>
           </div>
-          <div className="flex flex-col  w-full max-w-2xl mx-auto sm:p-4">
+          <motion.div className="flex flex-col  w-full max-w-2xl mx-auto sm:p-4">
             {cards.map((card, index) => (
               <div key={index} className="relative">
-                <div className="relative bg-white shadow-md rounded-2xl p-6 border border-gray-200 overflow-hidden">
+                <motion.div
+                  {...cardContentReveal}
+                  className="relative bg-white shadow-md rounded-2xl p-6 border border-gray-200 overflow-hidden"
+                >
                   {/* Quarter circle with icon in top right */}
                   <div
                     className={`absolute -top-6 -left-5 w-20 h-20 ${card.bgColor} rounded-full flex items-end justify-center p-2`}
@@ -380,16 +449,19 @@ const LLMOpSection = () => {
                       {card.subtitle}
                     </p>
                   </div>
-                </div>
+                </motion.div>
 
                 {/* Add dashed line below each card except the last one */}
                 {index < cards.length - 1 && (
-                  <div className="w-1 h-16 border-l-2 border-dashed border-gray-400 mx-auto my-2"></div>
+                  <motion.div
+                    {...dashedLineAnimation}
+                    className="w-1 h-16 border-l-2 border-dashed border-gray-400 mx-auto my-2"
+                  ></motion.div>
                 )}
               </div>
             ))}
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
       </div>
     </section>
   );
@@ -419,19 +491,36 @@ const AiFrameworksSection = () => {
     },
   ];
 
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const slideMaskReveal: MotionProps = {
+    initial: { y: 100, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "circOut" },
+  };
   return (
     <section className="2xl:px-32 xl:px-16 px-10  md:mb-20">
       <div className="content-ai-frameworks flex flex-col gap-3">
-        <div className="heading-section flex flex-col items-center">
+        <motion.div
+          {...fadeInfromBottom}
+          className="heading-section flex flex-col items-center"
+        >
           <H1>AI Frameworks & Responsible AI</H1>
           <p className="text-lg text-center">
             Ensuring ethical, transparent, and accountable AI implementations.
           </p>
-        </div>
+        </motion.div>
         <div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6">
             {cardsData.map((card) => (
-              <div
+              <motion.div
+                {...slideMaskReveal}
                 key={card.title}
                 className="bg-white shadow-lg rounded-lg overflow-hidden p-10"
               >
@@ -448,7 +537,7 @@ const AiFrameworksSection = () => {
                   </h2>
                   <p className="text-gray-600 mt-2">{card.subtitle}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
