@@ -17,7 +17,7 @@ import { TextGenerateEffect } from "@accernity/text-generate-effect";
 export default function Home() {
   return (
     <div>
-      <motion.section className="bg-[url('/home/hero-bg.png')] min-h-screen bg-cover bg-bottom">
+      <motion.section className="bg-[url('/home/hero-bg1.png')] min-h-screen bg-cover bg-bottom">
         <Header theme="black" />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
