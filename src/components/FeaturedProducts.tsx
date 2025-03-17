@@ -10,12 +10,22 @@ type TabType = "logic-gen" | "ava";
 export const FeaturedProductsSection = () => {
   const [selectTab, setSelectTab] = useState<TabType>("logic-gen");
 
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.5, ease: "easeOut" },
+  };
+
   return (
     <section className="feature-product-section bg-[url('/featured-bg.png')] ">
       <div className="featured-content 2xl:px-32 xl:px-16 px-10 py-8 flex flex-col justify-center items-center gap-9">
-        <h1 className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg ">
+        <motion.h1
+          {...blurSharpen}
+          className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg "
+        >
           Featured products
-        </h1>
+        </motion.h1>
         <Tabs
           value={selectTab}
           onValueChange={(value) => setSelectTab(value as TabType)}

@@ -6,6 +6,8 @@ import { RightOrientedCard } from "@components/RightOrientedCard";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { SendMessageForm } from "@components/ContactForm";
+import { Footer } from "@components/Footer";
 
 const CloudMorphPage = () => {
   return (
@@ -16,6 +18,8 @@ const CloudMorphPage = () => {
       <ContinuousInnovation />
       <DevopsMoreFeatures />
       <CloudSecuritySection />
+      <SendMessageForm />
+      <Footer />
     </div>
   );
 };
@@ -27,7 +31,7 @@ const CloudMorphHero = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeIn" }}
     >
-      <div className="min-h-screen flex flex-col px-10 gap-5 mt-8 md:flex-row md:px-0 md:-translate-x-16 lg:-translate-x-20 lg:mt-32  lg:gap-10 ">
+      <div className="min-h-screen flex flex-col sm:px-10 px-4 gap-5 mt-8 md:flex-row md:px-0 md:-translate-x-16 lg:-translate-x-20 lg:mt-32  lg:gap-10 ">
         <Image
           src={"/devops-hero1.jpg"}
           width={496}
@@ -56,29 +60,48 @@ const CloudMorphHero = () => {
 };
 
 const CloudScaleSection = () => {
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
+
   return (
-    <section className="2xl:px-32 xl:px-16 px-10">
+    <section className="2xl:px-32 xl:px-16 sm:px-10 px-4 mt-10">
       <div className="ai-meets-auto-content flex flex-col items-center justify-center gap-8">
-        <div className="text-center">
+        <motion.div {...fadeInfromBottom} className="text-center">
           <H1 className=" text-[#006FFF]">
             Cloud That Scales, Adapts, and Evolves
           </H1>
           <p className="text-lg md:text-xl text-gray-500 mt-2">
             Beyond Migration – Building a Cloud-First, AI-Optimized Future
           </p>
-        </div>
-        <Image
-          src={"/scale-cloud.jpg"}
-          width={821}
-          height={461}
-          alt="scale-cloud-img"
-          className=""
-        />
-        <p className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl">
+        </motion.div>
+        <motion.div {...blurSharpen}>
+          <Image
+            src={"/scale-cloud.jpg"}
+            width={821}
+            height={461}
+            alt="scale-cloud-img"
+            className=""
+          />
+        </motion.div>
+        <motion.p
+          {...blurSharpen}
+          className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl"
+        >
           We engineer high-performance cloud solutions that are optimized for
           cost, scalability, and security, ensuring seamless infrastructure
           management, automated workflows, and zero-downtime deployments.{" "}
-        </p>
+        </motion.p>
       </div>
     </section>
   );
@@ -141,33 +164,51 @@ const ContinuousInnovation = () => {
       pointColor: "bg-[#1976D2]",
     },
   ];
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
 
   return (
     <section className="bg-[url('/engineering-bg.png')]  bg-cover bg-no-repeat ">
       <LeftOrientedCard cards={cloudFeatures} />
-      <section className="engineering-ai-section 2xl:px-32 xl:px-16 px-10 mt-32">
+      <section className="engineering-ai-section 2xl:px-32 xl:px-16 sm:px-10 px-4 mt-32">
         <div className=" flex flex-col items-center justify-center gap-8">
-          <div className="text-center">
+          <motion.div {...fadeInfromBottom} className="text-center">
             <H1 className="text-black">
               DevOps That Drives Continuous Innovation{" "}
             </H1>
             <p className="text-lg md:text-xl text-gray-500 mt-2">
               Automate Everything, Deploy Anywhere, Deliver Faster
             </p>
-          </div>
-          <Image
-            src={"/devops-neon.jpg"}
-            width={820}
-            height={461}
-            alt="ai-meets-automation-img"
-            className=""
-          />
-          <p className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl">
+          </motion.div>
+          <motion.div {...blurSharpen}>
+            <Image
+              src={"/devops-neon.jpg"}
+              width={820}
+              height={461}
+              alt="ai-meets-automation-img"
+              className=""
+            />
+          </motion.div>
+          <motion.p
+            {...blurSharpen}
+            className="text-center text-lg md:text-xl text-gray-500 mt-2 max-w-3xl"
+          >
             DevOps is the engine that keeps businesses running at peak
             efficiency. Our CloudMorph DevOps suite accelerates your software
             development lifecycle, ensuring fast, reliable, and secure software
             releases.{" "}
-          </p>
+          </motion.p>
         </div>
       </section>
     </section>
@@ -293,23 +334,39 @@ const CloudSecuritySection = () => {
     },
   ];
 
+  const fadeInfromBottom = {
+    initial: { y: 40, opacity: 0 },
+    whileInView: { y: 0, opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.3, ease: "easeIn" },
+  };
+
+  const blurSharpen = {
+    initial: { filter: "blur(12px)", opacity: 0 },
+    whileInView: { filter: "blur(0px)", opacity: 1 },
+    viewport: { once: true, amount: 0.5 },
+    transition: { duration: 0.7, ease: "easeOut" },
+  };
+
   return (
     <section className="bg-[url('/cloud-sec-bg.png')] mt-20 bg-cover bg-no-repeat bg-top">
-      <div className="cloud-security-main 2xl:px-32 xl:px-16 px-10 ">
+      <div className="cloud-security-main 2xl:px-32 xl:px-16 sm:px-10  px-4">
         <div className=" flex flex-col items-center justify-center gap-8">
-          <div className="text-center">
+          <motion.div {...fadeInfromBottom} className="text-center">
             <H1 className="text-black">Cloud Security & Compliance </H1>
             <p className="text-lg md:text-xl text-gray-500 mt-2">
               Stay Secure, Stay Compliant, Stay Ahead{" "}
             </p>
-          </div>
-          <Image
-            src={"/security-cloud.png"}
-            width={820}
-            height={461}
-            alt="ai-meets-automation-img"
-            className=""
-          />
+          </motion.div>
+          <motion.div {...blurSharpen}>
+            <Image
+              src={"/security-cloud.png"}
+              width={820}
+              height={461}
+              alt="ai-meets-automation-img"
+              className=""
+            />
+          </motion.div>
         </div>
       </div>
       <div className="devops-content-list mt-32 flex flex-col gap-4">

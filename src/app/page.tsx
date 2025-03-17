@@ -14,6 +14,20 @@ import { Footer } from "@components/Footer";
 import { motion } from "motion/react";
 import { TextGenerateEffect } from "@accernity/text-generate-effect";
 
+const fadeInfromBottom = {
+  initial: { y: 40, opacity: 0 },
+  whileInView: { y: 0, opacity: 1 },
+  viewport: { once: true, amount: 0.5 },
+  transition: { duration: 0.3, ease: "easeIn" },
+};
+
+const blurSharpen = {
+  initial: { filter: "blur(12px)", opacity: 0 },
+  whileInView: { filter: "blur(0px)", opacity: 1 },
+  viewport: { once: true, amount: 0.5 },
+  transition: { duration: 0.5, ease: "easeOut" },
+};
+
 export default function Home() {
   return (
     <div>
@@ -152,36 +166,62 @@ const ScheduleSection = () => {
   return (
     <section className="bg-[url('/home/digital-transformation-bg.png')]  min-h-screen bg-cover bg-bottom">
       <div className="scedule-content 2xl:px-32 xl:px-16 px-10 py-20  flex flex-col gap-16">
-        <TextGenerateEffect
-          words="Your Doorway to Digital Transformation"
-          className="text-black text-center"
-          wordsClassName="text-black text-center text-3xl md:text-5xl font-medium text-left"
-        />
-
+        {/* <TextGenerateEffect */}
+        {/*   words="Your Doorway to Digital Transformation" */}
+        {/*   className="text-black text-center" */}
+        {/*   wordsClassName="text-black text-center text-3xl md:text-5xl font-medium text-left" */}
+        {/* /> */}
+        <motion.div {...fadeInfromBottom}>
+          <H1>Your Doorway to Digital Transformation</H1>
+        </motion.div>
         <div className="stratergic-section flex items-center justify-center gap-4 lg:gap-10 lg:flex-row flex-col md:justify-around">
-          <Image
-            src={"/home/digital-transform.png"}
-            alt="doorway-image"
-            width={500}
-            height={400}
+          <motion.div
+            {...blurSharpen}
             className="rounded-sm w-full h-auto lg:w-1/2"
-          />
+          >
+            <Image
+              src={"/home/digital-transform.png"}
+              alt="doorway-image"
+              width={500}
+              height={400}
+              className="rounded-sm w-full h-auto "
+            />
+          </motion.div>
           <div className="text-section flex flex-col gap-4 w-full lg:w-1/2  ">
-            <h2 className="text-left font-semibold text-3xl">
+            <motion.h2
+              className="text-left font-semibold text-3xl"
+              {...fadeInfromBottom}
+            >
               Stratergic modernization for measurable impact
-            </h2>
-            <p>
+            </motion.h2>
+            <motion.p
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.3, ease: "easeIn", delay: 0.05 }}
+            >
               Digital transformation is not a one-size-fits-all journey. We
               provide bespoke consulting services, leveraging deep industry
               expertise and cutting-edge technology to help businesses
               modernize, optimize, and scale effectively.
-            </p>{" "}
+            </motion.p>{" "}
             <br />
-            <p>
+            <motion.p
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.3, ease: "easeIn", delay: 0.08 }}
+            >
               we are committed to delivering scalable growth through tailored
               business intelligence, and seamless user experiences.{" "}
-            </p>
-            <div className="buttons flex flex-col sm:flex-row gap-2">
+            </motion.p>
+            <motion.div
+              initial={{ y: 50, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+              className="buttons flex flex-col sm:flex-row gap-2"
+            >
               <Button className="rounded-none px-8 py-5   hover:bg-[#006BFF] font-medium">
                 <FaCalendar /> Schedule a consultation
               </Button>
@@ -191,39 +231,45 @@ const ScheduleSection = () => {
               >
                 <MdMail className="h-6 w-6" /> Talk to our Experts
               </Button>
-            </div>
+            </motion.div>
           </div>
         </div>
         <div className="approach-section flex flex-col gap-10 justify-center items-center">
           <h1 className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg ">
             Our Approach
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <motion.div
+            initial={{ gap: 0, scale: 0.8 }}
+            whileInView={{ gap: "3rem", scale: 1 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-12"
+          >
             {approaches.map((approach) => (
               <div
                 key={approach.title}
                 className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2"
               >
                 <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.3, ease: "easeIn" }}
+                  // initial={{ opacity: 0, y: 20 }}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // viewport={{ once: true, amount: 0.3 }}
+                  // transition={{ duration: 0.3, ease: "easeIn" }}
                   className="font-medium text-xl"
                 >
                   {approach.title}
                 </motion.h1>
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.3, ease: "easeIn" }}
+                // initial={{ opacity: 0, y: 20 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // viewport={{ once: true, amount: 0.3 }}
+                // transition={{ duration: 0.3, ease: "easeIn" }}
                 >
                   {approach.description}
                 </motion.p>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
