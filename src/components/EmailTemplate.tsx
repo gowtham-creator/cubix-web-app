@@ -1,4 +1,5 @@
 "use client";
+
 import { FC } from "react";
 import {
   Html,
@@ -15,15 +16,15 @@ import {
   Preview,
 } from "@react-email/components";
 
-export const VerifyEmailTemplate: FC<{
+export const ClientRequestEmail: FC<{
   helpArea: string;
-  companyName: string;
+  company: string;
   email: string;
   phone: string;
   name: string;
   designation: string;
   message: string;
-}> = ({ helpArea, companyName, email, phone, name, designation, message }) => (
+}> = ({ helpArea, company, email, phone, name, designation, message }) => (
   <Html>
     <Head />
     <Tailwind>
@@ -33,56 +34,52 @@ export const VerifyEmailTemplate: FC<{
           <Section style={box}>
             <Img
               src="https://www.cubixso.com/logo-black.svg"
-              width="80"
-              height="40"
+              width="100"
+              height="60"
               alt="cubixso"
             />
             <Hr style={hr} />
             <Text style={title}>{`hey gowtham`} </Text>
+            <Text>{`You got a new request from a client`} </Text>
             <>
               <Row>
-                <Column>field</Column>
-                <Column>value</Column>
+                <Column className="font-bold text-lg w-1/2">field</Column>
+                <Column className="font-bold text-lg w-1/2">value</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column> name</Column>
-                <Column>{name}</Column>
+                <Column className="w-1/2 font-semibold"> name</Column>
+                <Column className="w-1/2">{name}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>company name</Column>
-                <Column>{companyName}</Column>
+                <Column className="w-1/2 font-semibold">company name</Column>
+                <Column className="w-1/2">{company}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>help area</Column>
-                <Column>{helpArea}</Column>
+                <Column className="w-1/2 font-semibold">help area</Column>
+                <Column className="w-1/2">{helpArea}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>company name</Column>
-                <Column>{companyName}</Column>
+                <Column className="w-1/2 font-semibold">email</Column>
+                <Column className="w-1/2">{email}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>email</Column>
-                <Column>{email}</Column>
+                <Column className="w-1/2 font-semibold">phone number</Column>
+                <Column className="w-1/2">{phone}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>phone number</Column>
-                <Column>{phone}</Column>
+                <Column className="w-1/2 font-semibold">designation</Column>
+                <Column className="w-1/2">{designation}</Column>
               </Row>
               <Hr className="my-[16px] border-gray-300" />
               <Row>
-                <Column>designation</Column>
-                <Column>{designation}</Column>
-              </Row>
-              <Hr className="my-[16px] border-gray-300" />
-              <Row>
-                <Column>message</Column>
-                <Column>{message}</Column>
+                <Column className="w-1/2 font-semibold">message</Column>
+                <Column className="w-1/2">{message}</Column>
               </Row>
             </>
           </Section>

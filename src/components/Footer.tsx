@@ -13,7 +13,7 @@ const Footer = () => {
     headingAnimation: {
       initial: { opacity: 0, y: 50 },
       whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true, amount: 0.3 },
+      viewport: { once: false, amount: 0.3 },
       transition: { duration: 0.6, ease: "easeOut" },
     },
 
@@ -21,7 +21,7 @@ const Footer = () => {
     formContainerAnimation: {
       initial: { opacity: 0 },
       whileInView: { opacity: 1 },
-      viewport: { once: true, amount: 0.3 },
+      viewport: { once: false, amount: 0.3 },
       transition: { staggerChildren: 0.15, delayChildren: 0.3 },
     },
 
@@ -35,7 +35,7 @@ const Footer = () => {
     buttonAnimation: {
       initial: { opacity: 0, scale: 0.9 },
       whileInView: { opacity: 1, scale: 1 },
-      viewport: { once: true, amount: 0.3 },
+      viewport: { once: false, amount: 0.3 },
       transition: { delay: 0.8, duration: 0.4, ease: "easeOut" },
     },
 
@@ -43,7 +43,7 @@ const Footer = () => {
     contactAnimation: {
       initial: { opacity: 0, x: 50 },
       whileInView: { opacity: 1, x: 0 },
-      viewport: { once: true, amount: 0.3 },
+      viewport: { once: false, amount: 0.3 },
       transition: { duration: 0.6, delay: 0.5, ease: "easeOut" },
     },
 
@@ -51,7 +51,7 @@ const Footer = () => {
     socialsAnimation: {
       initial: { opacity: 0, y: 20 },
       whileInView: { opacity: 1, y: 0 },
-      viewport: { once: true, amount: 0.3 },
+      viewport: { once: false, amount: 0.3 },
       transition: { duration: 0.4, delay: 0.8, ease: "easeOut" },
     },
   };
