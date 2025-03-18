@@ -22,9 +22,9 @@ const fadeInfromBottom = {
 };
 
 const blurSharpen = {
-  initial: { filter: "blur(12px)", opacity: 0 },
-  whileInView: { filter: "blur(0px)", opacity: 1 },
-  viewport: { once: true, amount: 0.5 },
+  initial: { filter: "blur(12px)" },
+  whileInView: { filter: "blur(0px)" },
+  viewport: { once: true, amount: 0.75 },
   transition: { duration: 0.5, ease: "easeOut" },
 };
 
@@ -198,7 +198,7 @@ const ScheduleSection = () => {
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn", delay: 0.05 }}
+              transition={{ duration: 0.3, ease: "easeIn" }}
             >
               Digital transformation is not a one-size-fits-all journey. We
               provide bespoke consulting services, leveraging deep industry
@@ -210,7 +210,7 @@ const ScheduleSection = () => {
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn", delay: 0.08 }}
+              transition={{ duration: 0.3, ease: "easeIn" }}
             >
               we are committed to delivering scalable growth through tailored
               business intelligence, and seamless user experiences.{" "}
@@ -219,7 +219,7 @@ const ScheduleSection = () => {
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn", delay: 0.1 }}
+              transition={{ duration: 0.3, ease: "easeIn" }}
               className="buttons flex flex-col sm:flex-row gap-2"
             >
               <Button className="rounded-none px-8 py-5   hover:bg-[#006BFF] font-medium">
