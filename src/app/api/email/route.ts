@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import z from "zod";
-import { Resend } from "resend";
-import { ClientRequestEmail } from "@components/EmailTemplate";
-import { ReactElement } from "react";
+// import { Resend } from "resend";
+// import { ClientRequestEmail } from "@components/EmailTemplate";
+// import { ReactElement } from "react";
 
 const EmailSchema = z.object({
   helpArea: z.string(),

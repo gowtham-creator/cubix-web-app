@@ -39,7 +39,7 @@ export default function Home() {
           transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
           className="hero-section 2xl:px-32 xl:px-16 px-10 mt-20 md:mt-32 flex gap-5 flex-col"
         >
-          <h1 className="text-6xl font-semibold text-[#BFB080]">
+          <h1 className="text-4xl sm:text-6xl font-semibold text-[#BFB080]">
             Where Innovation Takes Flight
           </h1>
           <p className="text-white max-w-2xl font-normal  text-xl">
@@ -238,36 +238,34 @@ const ScheduleSection = () => {
           <h1 className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg ">
             Our Approach
           </h1>
-          <motion.div
-            initial={{ gap: 0, scale: 0.8 }}
-            whileInView={{ gap: "3rem", scale: 1 }}
-            viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-12"
-          >
+          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             {approaches.map((approach) => (
-              <div
+              <motion.div
+                initial={{ filter: "blur(10px)" }}
+                whileInView={{ filter: "blur(0px)" }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.3, ease: "easeIn" }}
                 key={approach.title}
                 className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2"
               >
                 <motion.h1
-                  // initial={{ opacity: 0, y: 20 }}
-                  // whileInView={{ opacity: 1, y: 0 }}
-                  // viewport={{ once: true, amount: 0.3 }}
-                  // transition={{ duration: 0.3, ease: "easeIn" }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.3, ease: "easeIn" }}
                   className="font-medium text-xl"
                 >
                   {approach.title}
                 </motion.h1>
                 <motion.p
-                // initial={{ opacity: 0, y: 20 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // viewport={{ once: true, amount: 0.3 }}
-                // transition={{ duration: 0.3, ease: "easeIn" }}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
                 >
                   {approach.description}
                 </motion.p>
-              </div>
+              </motion.div>
             ))}
           </motion.div>
         </div>

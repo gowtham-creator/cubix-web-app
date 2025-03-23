@@ -10,10 +10,15 @@ import { motion } from "motion/react";
 
 interface Props {
   className?: string;
+  mobNavClassName?: string;
   theme?: "black" | "white";
 }
 
-export const Header: FC<Props> = ({ className, theme = "white" }) => {
+export const Header: FC<Props> = ({
+  className,
+  theme = "white",
+  mobNavClassName,
+}) => {
   const [openNav, setOpenNav] = useState<boolean>(false);
   const pathname = usePathname();
   const links = [
@@ -50,7 +55,7 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
         y: { type: "keyframes", visualDuration: 0.4 },
       }}
       className={cn(
-        "sm:px-10 px-4 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
+        "main-header sm:px-10 px-4 py-4 2xl:px-32 xl:px-16 flex flex-row justify-between items-center",
         className,
       )}
     >
@@ -118,7 +123,8 @@ export const Header: FC<Props> = ({ className, theme = "white" }) => {
       {/* Mobile Navigation Overlay */}
       <div
         className={cn(
-          "fixed top-0 right-0 bottom-0 bg-transparent  backdrop-blur-md shadow-lg z-50 w-80 transform transition-transform duration-300 ease-in-out",
+          "mob-nav fixed top-0 right-0 bottom-0 bg-transparent  backdrop-blur-md shadow-lg z-50 w-80 transform transition-transform duration-300 ease-in-out",
+          mobNavClassName,
           openNav ? "translate-x-0" : "translate-x-full",
         )}
       >

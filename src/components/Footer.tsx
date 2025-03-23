@@ -132,7 +132,9 @@ const Footer = () => {
           {...animationSet1.socialsAnimation}
           className="socials flex flex-row justify-between"
         >
-          <p className="text-gray-500 text-xs">© 2025 — Copyright</p>
+          <p className="text-gray-500 text-xs">
+            © 2025 — copyright@cubixso solutions private limited
+          </p>
           <div className="flex flex-row gap-5">
             <FaLinkedin className="text-white h-5 w-5" />
             <FaFacebook className="text-white h-5 w-5" />

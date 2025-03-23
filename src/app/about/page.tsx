@@ -19,8 +19,8 @@ import { TextGenerateEffect } from "@accernity/text-generate-effect";
 
 const AboutPage = () => {
   return (
-    <div>
-      <Header />
+    <div className="">
+      <Header mobNavClassName="right-[45%] xs:right-[47%] sm:right-[45%] md:right-0" />
       <AboutMainSection />
       <Footer />
     </div>
