@@ -41,7 +41,7 @@ const fadeInFromBlur = {
 };
 
 export const SendMessageForm = () => {
-  const { register, handleSubmit, setValue, watch } = useForm({
+  const { register, handleSubmit, setValue, watch, reset } = useForm({
     defaultValues: {
       helpArea: "",
       company: "",
@@ -76,7 +76,7 @@ export const SendMessageForm = () => {
       toast("request sent successfully", {
         description: "we will reach out to you soon regarding your request",
       });
-      router.refresh();
+      reset();
     } catch (error) {
       console.log(error);
 
