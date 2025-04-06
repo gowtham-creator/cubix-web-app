@@ -37,7 +37,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
-          className="hero-section 2xl:px-32 xl:px-16 px-10 mt-20 md:mt-32 flex gap-5 flex-col"
+          className="relative hero-section 2xl:px-32 xl:px-16 px-10 pt-44 flex gap-5 flex-col"
         >
           <h1 className="text-4xl sm:text-6xl font-semibold text-[#BFB080]">
             Where Innovation Takes Flight

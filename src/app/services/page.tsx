@@ -15,7 +15,7 @@ const Servicespage = () => {
   return (
     <div className="flex flex-col gap-12">
       <Header />
-      <section className="out-services-head 2xl:px-32  xl:px-16 px-10  mt-4 flex flex-col items-center gap-4">
+      <section className="out-services-head 2xl:px-32  xl:px-16 px-10 pt-32  mt-4 flex flex-col items-center gap-4">
         <motion.h1
           initial={{ y: 30, filter: "blur(10px)" }}
           animate={{ y: 0, filter: "blur(0px)" }}

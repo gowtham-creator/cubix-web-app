@@ -20,7 +20,9 @@ import { TextGenerateEffect } from "@accernity/text-generate-effect";
 const AboutPage = () => {
   return (
     <div className="">
-      <Header mobNavClassName="right-[45%] xs:right-[47%] sm:right-[45%] md:right-0" />
+      <Header
+      // mobNavClassName="right-[45%] xs:right-[47%] sm:right-[45%] md:right-0"
+      />
       <AboutMainSection />
       <Footer />
     </div>
@@ -30,7 +32,7 @@ const AboutPage = () => {
 const AboutMainSection = () => {
   return (
     <>
-      <section className="main-about-info min-h-screen 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about/about-main-bg.png')] bg-no-repeat">
+      <section className="main-about-info min-h-screen py-32 2xl:px-32 xl:px-16 sm:px-10 px-4 object-contain bg-[url('/about/about-main-bg.png')] bg-no-repeat">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
