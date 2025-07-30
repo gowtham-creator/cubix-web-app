@@ -67,11 +67,10 @@ const IntroSection = () => {
           </p>
           <p>
             {" "}
-            At Cubixso Solutions Pvt Ltd, we don’t just build software; we craft
-            experiences, engineer solutions, and solve real-world business
-            challenges. Whether it’s AI-driven automation, intuitive digital
-            products, or scalable cloud solutions, we help businesses modernize
-            at the core and stay ahead of the curve.
+            At Cubixso, we don’t just build software; 
+            we craft experiences powered by generative AI. We deliver AI as a service and develop advanced AI-driven solutions to solve real-world business challenges. 
+            Whether it’s generative AI automation, intuitive digital products, or scalable cloud solutions, 
+            we help businesses modernize at the core and stay ahead of the curve.
           </p>
         </div>
       </div>
@@ -223,14 +222,17 @@ const TeamSection = () => {
     "/about/mongo.png",
     "/about/aws.png",
     "/about/google-devs.png",
+    "/about/PayU-ogo.png",
+    "/about/zoho.jpg"
   ];
 
   const trustedBy = [
-    "/about/bolt-abacus-black.png",
+    "/about/winningedge.png",
     "/about/elit-celer.png",
     "/about/tech-savant.png",
     "/about/krower.png",
     "/about/pursuit-soln.png",
+    "/about/ect-logo.png",
   ];
 
   return (
@@ -268,7 +270,7 @@ const TeamSection = () => {
                 height={350}
               />
               <h2 className="font-semibold">Nayini Gowtham Reddy</h2>
-              <p>Founder and Managing Director</p>
+              <p>Founder and AI Consultant</p>
             </motion.li>
             <motion.li
               initial={{ scale: 0.98, filter: "blur(10px)" }}
@@ -281,13 +283,13 @@ const TeamSection = () => {
               className="flex flex-col gap-1"
             >
               <Image
-                src={"/about/sudheer.png"}
+                src={""}
                 alt="founder-img"
                 width={350}
                 height={350}
               />
-              <h2 className="font-semibold">Sudheer Kumar Kota</h2>
-              <p>Co Founder and CTO</p>
+              <h2 className="font-semibold"></h2>
+              <p></p>
             </motion.li>
             <motion.li
               initial={{ scale: 0.98, filter: "blur(10px)" }}
@@ -305,8 +307,8 @@ const TeamSection = () => {
                 width={350}
                 height={350}
               />
-              <h2 className="font-semibold">Nayini Gowtham Reddy</h2>
-              <p>Founder and Managing Director</p>
+              <h2 className="font-semibold">Nayini Praveen Kumar Reddy</h2>
+              <p>CEO and Managing Director</p>
             </motion.li>
           </ul>
         </div>
