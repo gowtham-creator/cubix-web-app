@@ -12,21 +12,11 @@ import { H1 } from "@components/Heading";
 import { SendMessageForm } from "@components/ContactForm";
 import { Footer } from "@components/Footer";
 import { motion } from "motion/react";
+import { reveals, stagger } from "lib/animations";
 import { TextGenerateEffect } from "@accernity/text-generate-effect";
 
-const fadeInfromBottom = {
-  initial: { y: 40, opacity: 0 },
-  whileInView: { y: 0, opacity: 1 },
-  viewport: { once: true, amount: 0.5 },
-  transition: { duration: 0.3, ease: "easeIn" },
-};
-
-const blurSharpen = {
-  initial: { filter: "blur(12px)" },
-  whileInView: { filter: "blur(0px)" },
-  viewport: { once: true, amount: 0.75 },
-  transition: { duration: 0.5, ease: "easeOut" },
-};
+const fadeInfromBottom = reveals.up;
+const blurSharpen = reveals.scale;
 
 export default function Home() {
   return (
@@ -34,9 +24,9 @@ export default function Home() {
       <motion.section className="bg-[url('/home/hero-bg1.png')] min-h-screen bg-cover bg-bottom">
         <Header theme="black" />
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
+          transition={{ duration: 0.36, ease: [0.2, 0.8, 0.2, 1] }}
           className="relative hero-section 2xl:px-32 xl:px-16 px-10 pt-44 flex gap-5 flex-col"
         >
           <h1 className="text-4xl sm:text-6xl font-semibold text-[#BFB080]">
@@ -100,33 +90,13 @@ const PartnerSection = () => {
   return (
     <section className=" bg-[url('/partner-us-bg.png')] min-h-[80vh] bg-contain bg-no-repeat bg-right-top ">
       <div className="2xl:px-32 xl:px-16 px-10 py-10 flex flex-col gap-10 md:gap-20">
-        <motion.span
-          initial={{ scale: 0.8, filter: "blur(10px)" }}
-          whileInView={{ scale: 1, filter: "blur(0px)" }}
-          viewport={{ once: true, amount: 0.75 }}
-          transition={{
-            duration: 0.3,
-            delay: 0.1,
-          }}
-        >
+        <motion.span {...reveals.scale}>
           <H1 className="text-center">Why partner with us</H1>
         </motion.span>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
           {listItems.map((item) => (
-            <motion.li
-              initial={{ scale: 0.8, filter: "blur(10px)" }}
-              whileInView={{ scale: 1, filter: "blur(0px)" }}
-              viewport={{ once: true, amount: 0.75 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-              key={item.title}
-              className="flex flex-col gap-4"
-            >
-              {/* <div className="bg-white/20 backdrop-blur-lg rounded-lg w-12 h-12 flex justify-center items-center p-3 border border-white/30 shadow-lg"> */}
+            <motion.li {...reveals.up} key={item.title} className="flex flex-col gap-4">
               {item.Icon}
-              {/* </div> */}
               <h2 className="text-xl font-medium">{item.title}</h2>
               <p>{item.description}</p>
               <Button className="w-fit rounded-none hover:text-white hover:bg-[#006BFF]">
@@ -194,34 +164,18 @@ const ScheduleSection = () => {
             >
               Stratergic modernization for measurable impact
             </motion.h2>
-            <motion.p
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn" }}
-            >
+            <motion.p {...reveals.up}>
               Digital transformation is not a one-size-fits-all journey. We
               provide bespoke consulting services, leveraging deep industry
               expertise and cutting-edge technology to help businesses
               modernize, optimize, and scale effectively.
             </motion.p>{" "}
             <br />
-            <motion.p
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn" }}
-            >
+            <motion.p {...reveals.up}>
               we are committed to delivering scalable growth through tailored
               business intelligence, and seamless user experiences.{" "}
             </motion.p>
-            <motion.div
-              initial={{ y: 50, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.3, ease: "easeIn" }}
-              className="buttons flex flex-col sm:flex-row gap-2"
-            >
+            <motion.div {...reveals.up} className="buttons flex flex-col sm:flex-row gap-2">
               <Button className="rounded-none px-8 py-5   hover:bg-[#006BFF] font-medium">
                 <FaCalendar /> Schedule a consultation
               </Button>
@@ -238,31 +192,13 @@ const ScheduleSection = () => {
           <h1 className="bg-[#006BFF] text-white w-fit py-2 px-7 font-semibold rounded-full shadow-blue-200 shadow-lg ">
             Our Approach
           </h1>
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 gap-12">
+          <motion.div {...stagger(0.12, 0.1)} className="grid grid-cols-1 sm:grid-cols-2 gap-12">
             {approaches.map((approach) => (
-              <motion.div
-                initial={{ filter: "blur(10px)" }}
-                whileInView={{ filter: "blur(0px)" }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.3, ease: "easeIn" }}
-                key={approach.title}
-                className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2"
-              >
-                <motion.h1
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.3, ease: "easeIn" }}
-                  className="font-medium text-xl"
-                >
+              <motion.div {...reveals.scale} key={approach.title} className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2">
+                <motion.h1 {...reveals.up} className="font-medium text-xl">
                   {approach.title}
                 </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ duration: 0.3, delay: 0.05, ease: "easeIn" }}
-                >
+                <motion.p {...reveals.up}>
                   {approach.description}
                 </motion.p>
               </motion.div>

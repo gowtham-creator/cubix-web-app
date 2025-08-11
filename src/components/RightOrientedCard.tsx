@@ -2,6 +2,7 @@ import React, { FC, ReactNode } from "react";
 import { H1 } from "./Heading";
 import { SingleDescriptionList } from "./SingleDescriptionList";
 import { motion } from "motion/react";
+import { reveals } from "lib/animations";
 
 interface CardType {
   title: string;
@@ -19,7 +20,7 @@ const RightOrientedCard: FC<Props> = ({ cards }) => {
     <section className="right-image-card mt-32  flex flex-col gap-4">
       {cards.map((card) => (
         <Container key={card.title}>
-          <motion.div {...springyEntrance} className="flex flex-col gap-2 px-8">
+          <motion.div {...reveals.up} className="flex flex-col gap-2 px-8">
             <FeatureTitle>{card.title}</FeatureTitle>
             <SingleDescriptionList
               listItems={card.descriptionPoints}
@@ -33,19 +34,7 @@ const RightOrientedCard: FC<Props> = ({ cards }) => {
   );
 };
 
-const springyEntrance = {
-  initial: { x: 80, opacity: 0 },
-  whileInView: { x: 0, opacity: 1 },
-  viewport: { once: true, amount: 0.4 },
-  transition: { type: "spring", stiffness: 70, damping: 12 },
-};
-
-const bounceReveal = {
-  initial: { filter: "blur(10px)", opacity: 0, scale: 0.9 },
-  whileInView: { filter: "blur(0px)", opacity: 1, scale: 1 },
-  viewport: { once: true, amount: 0.4 },
-  transition: { type: "spring", stiffness: 80, damping: 12, delay: 0.15 },
-};
+const bounceReveal = reveals.scale;
 
 const Container: FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -63,10 +52,7 @@ const FeatureTitle: FC<{ children: ReactNode }> = ({ children }) => {
 
 const ImageContainer: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <motion.div
-      {...bounceReveal}
-      className="image-container border-2 border-dashed border-gray-300 rounded-[110px]  w-full lg:w-fit xl:w-fit p-2 [border-dash-length:20px] [border-dash-gap:6px]"
-    >
+    <motion.div {...bounceReveal} className="image-container border-2 border-dashed border-gray-300 rounded-[110px]  w-full lg:w-fit xl:w-fit p-2 [border-dash-length:20px] [border-dash-gap:6px]">
       {children}
     </motion.div>
   );

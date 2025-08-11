@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "motion/react";
+import { reveals } from "lib/animations";
 import React, { FC, ReactNode } from "react";
 import { H1 } from "./Heading";
 import { SingleDescriptionList } from "./SingleDescriptionList";
@@ -20,7 +21,7 @@ export const LeftOrientedCard: FC<Props> = ({ cards }) => {
       {cards.map((feature) => (
         <Container key={feature.title}>
           <FeatureImage>{feature.Image}</FeatureImage>
-          <div className="flex flex-col gap-2 px-4 sm:px-8 ">
+          <motion.div {...reveals.up} className="flex flex-col gap-2 px-4 sm:px-8 ">
             <H1 className="text-left text-2xl lg:text-4xl xl:text-5xl">
               {feature.title}
             </H1>
@@ -28,7 +29,7 @@ export const LeftOrientedCard: FC<Props> = ({ cards }) => {
               listItems={feature.descriptionPoints}
               pointColor={feature.pointColor}
             />
-          </div>
+          </motion.div>
         </Container>
       ))}
     </div>
@@ -45,14 +46,7 @@ const FeatureImage: FC<{ children: ReactNode }> = ({ children }) => {
 
 const Container: FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.5 }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="flex flex-col lg:flex-row gap-8 items-center "
-    >
+    <motion.div {...reveals.scale} className="flex flex-col lg:flex-row gap-8 items-center ">
       {children}
     </motion.div>
   );
