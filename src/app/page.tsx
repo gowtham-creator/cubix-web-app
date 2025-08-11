@@ -94,8 +94,8 @@ const PartnerSection = () => {
           <H1 className="text-center">Why partner with us</H1>
         </motion.span>
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-9">
-          {listItems.map((item) => (
-            <motion.li {...reveals.up} key={item.title} className="flex flex-col gap-4">
+          {listItems.map((item, index) => (
+            <motion.li {...reveals.up} key={`${item.title}-${index}`} className="flex flex-col gap-4">
               {item.Icon}
               <h2 className="text-xl font-medium">{item.title}</h2>
               <p>{item.description}</p>
@@ -193,8 +193,8 @@ const ScheduleSection = () => {
             Our Approach
           </h1>
           <motion.div {...stagger(0.12, 0.1)} className="grid grid-cols-1 sm:grid-cols-2 gap-12">
-            {approaches.map((approach) => (
-              <motion.div {...reveals.scale} key={approach.title} className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2">
+            {approaches.map((approach, index) => (
+              <motion.div {...reveals.scale} key={`${approach.title}-${index}`} className=" shadow-lg rounded-lg sm:w-72 p-8 flex flex-col bg-white gap-2">
                 <motion.h1 {...reveals.up} className="font-medium text-xl">
                   {approach.title}
                 </motion.h1>
