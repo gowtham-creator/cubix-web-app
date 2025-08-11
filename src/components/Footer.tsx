@@ -124,6 +124,18 @@ const Footer = () => {
                   +91 8374563012
                 </Button>
               </Link>
+              <div className="mt-2">
+                <p className="text-gray-300 text-sm font-semibold mb-2">
+                  Our Location
+                </p>
+                <p className="text-gray-400 text-sm">
+                  20, Inorbit Mall Rd, Vittal Rao Nagar,<br />
+                  Madhapur, Hyderabad, Telangana 500032
+                </p>
+                <p className="text-gray-300 text-sm mt-1 font-medium">
+                  T-Hub Phase 2
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

@@ -222,7 +222,7 @@ const TeamSection = () => {
     "/about/mongo.png",
     "/about/aws.png",
     "/about/google-devs.png",
-    "/about/PayU-ogo.png",
+    "/about/perplexity.png",
     "/about/zoho.jpg"
   ];
 
@@ -324,7 +324,7 @@ const TeamSection = () => {
           </div>
         </section>
         <section className="our-supporters flex flex-col justify-center items-center ">
-          <H1 className="">Trusted By</H1>
+          <H1 className="">Our Collaborators</H1>
           {/* <InfiniteCarousel /> */}
           <div className="h-[10rem] 2xl:px-32 xl:px-16 px-10 rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
             <InfiniteMovingCards
