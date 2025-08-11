@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   description:
     "We are a team of passionate engineers and design strategists, modernizing businesses with Digital Engineering, AI/ML, UI/UX, and Performance Marketing. From legacy transformation to future-ready experiences, we make innovation effortless.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.ico?v=2",
   },
 };
 
