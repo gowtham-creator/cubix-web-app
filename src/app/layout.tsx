@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 // import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from "next/font/local";
-import Head from 'next/head';
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -65,6 +64,9 @@ export const metadata: Metadata = {
   title: "Cubixso",
   description:
     "We are a team of passionate engineers and design strategists, modernizing businesses with Digital Engineering, AI/ML, UI/UX, and Performance Marketing. From legacy transformation to future-ready experiences, we make innovation effortless.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
@@ -74,9 +76,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/dark-logo.png" type="image/png" />
-      </Head>
       <body className={`${customFont.className}  antialiased `}>
         {children}
       </body>
