@@ -302,13 +302,13 @@ const TeamSection = () => {
               className="flex flex-col gap-1"
             >
               <Image
-                src={"/about/uncle.png"}
+                src={""}
                 alt="founder-img"
                 width={350}
                 height={350}
               />
-              <h2 className="font-semibold">Nayini Praveen Kumar Reddy</h2>
-              <p>CEO and Managing Director</p>
+              <h2 className="font-semibold"></h2>
+              <p></p>
             </motion.li>
           </ul>
         </div>
